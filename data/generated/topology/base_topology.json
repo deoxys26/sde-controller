@@ -1,0 +1,537 @@
+{
+    "directed": true,
+    "multigraph": false,
+    "graph": {},
+    "nodes": [
+        {
+            "id": 0,
+            "type": "switch"
+        },
+        {
+            "id": 1,
+            "type": "switch"
+        },
+        {
+            "id": 2,
+            "type": "switch"
+        },
+        {
+            "id": 3,
+            "type": "switch"
+        },
+        {
+            "id": 4,
+            "type": "switch"
+        },
+        {
+            "id": 5,
+            "type": "switch"
+        },
+        {
+            "id": 6,
+            "type": "switch"
+        },
+        {
+            "id": 7,
+            "type": "switch"
+        },
+        {
+            "id": 8,
+            "type": "switch"
+        },
+        {
+            "id": 9,
+            "type": "switch"
+        },
+        {
+            "id": 10,
+            "type": "switch"
+        },
+        {
+            "id": 11,
+            "type": "switch"
+        },
+        {
+            "id": 12,
+            "type": "switch"
+        },
+        {
+            "id": 13,
+            "type": "switch"
+        },
+        {
+            "id": 14,
+            "type": "switch"
+        }
+    ],
+    "edges": [
+        {
+            "edge_id": "E_0_1",
+            "capacity_mbps": 953.4,
+            "base_delay_ms": 2.17,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 0,
+            "target": 1
+        },
+        {
+            "edge_id": "E_0_2",
+            "capacity_mbps": 1029.61,
+            "base_delay_ms": 2.04,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 0,
+            "target": 2
+        },
+        {
+            "edge_id": "E_0_3",
+            "capacity_mbps": 934.23,
+            "base_delay_ms": 2.09,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 0,
+            "target": 3
+        },
+        {
+            "edge_id": "E_0_5",
+            "capacity_mbps": 932.68,
+            "base_delay_ms": 1.95,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 0,
+            "target": 5
+        },
+        {
+            "edge_id": "E_0_7",
+            "capacity_mbps": 1097.9,
+            "base_delay_ms": 2.06,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 0,
+            "target": 7
+        },
+        {
+            "edge_id": "E_0_9",
+            "capacity_mbps": 1011.39,
+            "base_delay_ms": 2.07,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 0,
+            "target": 9
+        },
+        {
+            "edge_id": "E_0_10",
+            "capacity_mbps": 1068.57,
+            "base_delay_ms": 2.11,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 0,
+            "target": 10
+        },
+        {
+            "edge_id": "E_0_11",
+            "capacity_mbps": 945.81,
+            "base_delay_ms": 1.81,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 0,
+            "target": 11
+        },
+        {
+            "edge_id": "E_0_13",
+            "capacity_mbps": 963.09,
+            "base_delay_ms": 1.91,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 0,
+            "target": 13
+        },
+        {
+            "edge_id": "E_0_14",
+            "capacity_mbps": 942.2,
+            "base_delay_ms": 2.18,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 0,
+            "target": 14
+        },
+        {
+            "edge_id": "E_1_0",
+            "capacity_mbps": 1075.27,
+            "base_delay_ms": 1.93,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 1,
+            "target": 0
+        },
+        {
+            "edge_id": "E_1_3",
+            "capacity_mbps": 1031.09,
+            "base_delay_ms": 1.96,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 1,
+            "target": 3
+        },
+        {
+            "edge_id": "E_1_4",
+            "capacity_mbps": 1082.91,
+            "base_delay_ms": 1.98,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 1,
+            "target": 4
+        },
+        {
+            "edge_id": "E_1_6",
+            "capacity_mbps": 952.98,
+            "base_delay_ms": 1.9,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 1,
+            "target": 6
+        },
+        {
+            "edge_id": "E_1_7",
+            "capacity_mbps": 1012.27,
+            "base_delay_ms": 1.91,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 1,
+            "target": 7
+        },
+        {
+            "edge_id": "E_1_8",
+            "capacity_mbps": 1016.92,
+            "base_delay_ms": 2.16,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 1,
+            "target": 8
+        },
+        {
+            "edge_id": "E_2_0",
+            "capacity_mbps": 979.88,
+            "base_delay_ms": 1.89,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 2,
+            "target": 0
+        },
+        {
+            "edge_id": "E_2_4",
+            "capacity_mbps": 1099.51,
+            "base_delay_ms": 2.0,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 2,
+            "target": 4
+        },
+        {
+            "edge_id": "E_3_0",
+            "capacity_mbps": 918.18,
+            "base_delay_ms": 1.82,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 3,
+            "target": 0
+        },
+        {
+            "edge_id": "E_3_1",
+            "capacity_mbps": 921.93,
+            "base_delay_ms": 2.05,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 3,
+            "target": 1
+        },
+        {
+            "edge_id": "E_3_8",
+            "capacity_mbps": 1058.42,
+            "base_delay_ms": 1.97,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 3,
+            "target": 8
+        },
+        {
+            "edge_id": "E_4_1",
+            "capacity_mbps": 912.71,
+            "base_delay_ms": 1.95,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 4,
+            "target": 1
+        },
+        {
+            "edge_id": "E_4_2",
+            "capacity_mbps": 1099.22,
+            "base_delay_ms": 2.01,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 4,
+            "target": 2
+        },
+        {
+            "edge_id": "E_4_5",
+            "capacity_mbps": 1094.22,
+            "base_delay_ms": 2.14,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 4,
+            "target": 5
+        },
+        {
+            "edge_id": "E_4_6",
+            "capacity_mbps": 902.3,
+            "base_delay_ms": 2.09,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 4,
+            "target": 6
+        },
+        {
+            "edge_id": "E_4_12",
+            "capacity_mbps": 1036.34,
+            "base_delay_ms": 2.01,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 4,
+            "target": 12
+        },
+        {
+            "edge_id": "E_4_13",
+            "capacity_mbps": 953.37,
+            "base_delay_ms": 2.06,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 4,
+            "target": 13
+        },
+        {
+            "edge_id": "E_5_0",
+            "capacity_mbps": 922.31,
+            "base_delay_ms": 1.97,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 5,
+            "target": 0
+        },
+        {
+            "edge_id": "E_5_4",
+            "capacity_mbps": 990.74,
+            "base_delay_ms": 2.18,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 5,
+            "target": 4
+        },
+        {
+            "edge_id": "E_5_11",
+            "capacity_mbps": 1075.17,
+            "base_delay_ms": 1.91,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 5,
+            "target": 11
+        },
+        {
+            "edge_id": "E_5_12",
+            "capacity_mbps": 1000.12,
+            "base_delay_ms": 1.87,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 5,
+            "target": 12
+        },
+        {
+            "edge_id": "E_6_1",
+            "capacity_mbps": 1082.53,
+            "base_delay_ms": 2.15,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 6,
+            "target": 1
+        },
+        {
+            "edge_id": "E_6_4",
+            "capacity_mbps": 959.69,
+            "base_delay_ms": 2.06,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 6,
+            "target": 4
+        },
+        {
+            "edge_id": "E_6_9",
+            "capacity_mbps": 1021.79,
+            "base_delay_ms": 1.86,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 6,
+            "target": 9
+        },
+        {
+            "edge_id": "E_7_0",
+            "capacity_mbps": 1052.5,
+            "base_delay_ms": 2.02,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 7,
+            "target": 0
+        },
+        {
+            "edge_id": "E_7_1",
+            "capacity_mbps": 1055.73,
+            "base_delay_ms": 2.01,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 7,
+            "target": 1
+        },
+        {
+            "edge_id": "E_8_1",
+            "capacity_mbps": 900.11,
+            "base_delay_ms": 1.93,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 8,
+            "target": 1
+        },
+        {
+            "edge_id": "E_8_3",
+            "capacity_mbps": 903.9,
+            "base_delay_ms": 2.17,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 8,
+            "target": 3
+        },
+        {
+            "edge_id": "E_8_10",
+            "capacity_mbps": 1075.74,
+            "base_delay_ms": 2.13,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 8,
+            "target": 10
+        },
+        {
+            "edge_id": "E_8_14",
+            "capacity_mbps": 961.5,
+            "base_delay_ms": 1.82,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 8,
+            "target": 14
+        },
+        {
+            "edge_id": "E_9_0",
+            "capacity_mbps": 1075.6,
+            "base_delay_ms": 2.18,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 9,
+            "target": 0
+        },
+        {
+            "edge_id": "E_9_6",
+            "capacity_mbps": 917.13,
+            "base_delay_ms": 1.99,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 9,
+            "target": 6
+        },
+        {
+            "edge_id": "E_10_0",
+            "capacity_mbps": 913.84,
+            "base_delay_ms": 2.1,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 10,
+            "target": 0
+        },
+        {
+            "edge_id": "E_10_8",
+            "capacity_mbps": 1053.17,
+            "base_delay_ms": 1.85,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 10,
+            "target": 8
+        },
+        {
+            "edge_id": "E_11_0",
+            "capacity_mbps": 995.06,
+            "base_delay_ms": 2.02,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 11,
+            "target": 0
+        },
+        {
+            "edge_id": "E_11_5",
+            "capacity_mbps": 953.01,
+            "base_delay_ms": 2.15,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 11,
+            "target": 5
+        },
+        {
+            "edge_id": "E_12_4",
+            "capacity_mbps": 984.63,
+            "base_delay_ms": 1.88,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 12,
+            "target": 4
+        },
+        {
+            "edge_id": "E_12_5",
+            "capacity_mbps": 1007.86,
+            "base_delay_ms": 2.09,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 12,
+            "target": 5
+        },
+        {
+            "edge_id": "E_13_0",
+            "capacity_mbps": 940.23,
+            "base_delay_ms": 1.92,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 13,
+            "target": 0
+        },
+        {
+            "edge_id": "E_13_4",
+            "capacity_mbps": 1099.03,
+            "base_delay_ms": 2.06,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 13,
+            "target": 4
+        },
+        {
+            "edge_id": "E_14_0",
+            "capacity_mbps": 987.62,
+            "base_delay_ms": 2.01,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 14,
+            "target": 0
+        },
+        {
+            "edge_id": "E_14_8",
+            "capacity_mbps": 924.2,
+            "base_delay_ms": 1.89,
+            "packet_loss_rate": 0.0,
+            "active": true,
+            "source": 14,
+            "target": 8
+        }
+    ]
+}

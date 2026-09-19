@@ -1,0 +1,82 @@
+seed: 42
+num_nodes: 15
+topology_type: "barabasi_albert" # Generates realistic scale-free network topologies
+simulation_timesteps: 100
+default_capacity_mbps: 1000.0
+base_delay_ms: 2.0
+scenario: "normal"
+output_dir: "data/generated"
+
+# Phase 3: causal traffic/routing simulation settings.
+traffic_flows_per_timestep: 12
+traffic_base_demand_mbps: 180.0
+queue_capacity_mbps: 300.0
+queue_recovery_fraction: 0.35
+link_degradation_start_fraction: 0.30
+link_degradation_fraction: 0.15
+link_degradation_capacity_factor: 0.50
+routing_method: "static_shortest_path"
+reactive_routing_weights:
+  delay: 0.4
+  packet_loss: 0.3
+  utilization: 0.3
+
+# Phase 6: initial deterministic GA routing settings; not tuned on final scenarios.
+ga_routing:
+  random_seed: 42
+  population_size: 24
+  generations: 12
+  mutation_rate: 0.20
+  crossover_rate: 0.80
+  elite_count: 2
+  tournament_size: 3
+  max_path_length: 8
+  objective_weights:
+    delay: 0.30
+    utilization: 0.25
+    packet_loss: 0.20
+    jitter: 0.15
+    security_risk: 0.10
+
+# Phase 4: historical graph QoS forecasting settings.
+gnn:
+  history_length: 5
+  prediction_horizon: 1
+  train_ratio: 0.70
+  validation_ratio: 0.15
+  hidden_channels: 16
+  gru_hidden_size: 16
+  learning_rate: 0.005
+  batch_size: 4
+  epochs: 12
+  early_stopping_patience: 4
+  checkpoint_path: "data/generated/models/gnn_qos_best.pt"
+  dgst_mtl_hidden_channels: 16
+
+# Phase 4.5: reproducible multi-seed study. Simulator data stays fixed while
+# training seeds vary, isolating model initialization/training variability.
+gnn_experiment:
+  simulator_seed: 42
+  topology_seed: 42
+  num_nodes: 8
+  simulation_timesteps: 24
+  traffic_flows_per_timestep: 6
+  traffic_base_demand_mbps: 140.0
+  queue_capacity_mbps: 250.0
+  history_length: 5
+  prediction_horizon: 1
+  epochs: 10
+  early_stopping_patience: 4
+  learning_rate: 0.005
+  batch_size: 4
+  seeds: [42, 123, 2026]
+
+# Phase 5: UNSW-NB15 binary anomaly detection settings.
+security:
+  random_seed: 42
+  validation_ratio: 0.15
+  training_sample_size: 30000
+  class_weight: null
+  risk_threshold: 0.5
+  logistic_max_iter: 300
+  random_forest_estimators: 50

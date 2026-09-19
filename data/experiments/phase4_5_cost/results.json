@@ -1,0 +1,1621 @@
+{
+  "protocol": {
+    "simulator_seed": 42,
+    "topology_seed": 42,
+    "epochs": 10,
+    "seeds": [
+      42,
+      123,
+      2026
+    ],
+    "scenarios": [
+      "normal"
+    ],
+    "models": [
+      "reference",
+      "current",
+      "directed_only",
+      "congestion_only",
+      "proposed"
+    ]
+  },
+  "records": [
+    {
+      "scenario": "normal",
+      "model": "reference",
+      "training_seed": 42,
+      "metrics": {
+        "delay": {
+          "mae": 0.024541694670915604,
+          "rmse": 0.02843422442674637
+        },
+        "utilization": {
+          "mae": 0.10444284975528717,
+          "rmse": 0.12664894759655
+        },
+        "packet_loss": {
+          "mae": 0.06596501171588898,
+          "rmse": 0.06770098954439163
+        },
+        "jitter": {
+          "mae": 0.0009415735839866102,
+          "rmse": 0.0011339064221829176
+        },
+        "aggregate": {
+          "mae": 0.048972781747579575,
+          "rmse": 0.07320035248994827
+        }
+      },
+      "parameter_count": 8036,
+      "training_seconds": 11.753995099999884,
+      "inference_seconds": 0.09163679999983287,
+      "best_validation_epoch": 10,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.32412240902582806,
+          "validation_loss": 0.2987127999464671
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.30393118659655255,
+          "validation_loss": 0.2820827861626943
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.2856377561887105,
+          "validation_loss": 0.26184341311454773
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.2621892988681793,
+          "validation_loss": 0.23536365230878195
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.231924499074618,
+          "validation_loss": 0.2015062818924586
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.19460865358511606,
+          "validation_loss": 0.16085592408974966
+        },
+        {
+          "epoch": 7,
+          "train_loss": 0.1543450802564621,
+          "validation_loss": 0.12361988425254822
+        },
+        {
+          "epoch": 8,
+          "train_loss": 0.12415576974550883,
+          "validation_loss": 0.10613578806320827
+        },
+        {
+          "epoch": 9,
+          "train_loss": 0.11681125313043594,
+          "validation_loss": 0.10400813569625218
+        },
+        {
+          "epoch": 10,
+          "train_loss": 0.11376419415076573,
+          "validation_loss": 0.09448175132274628,
+          "best_validation_epoch": 10
+        }
+      ],
+      "recovered_checkpoint": false
+    },
+    {
+      "scenario": "normal",
+      "model": "current",
+      "training_seed": 42,
+      "metrics": {
+        "delay": {
+          "mae": 0.023987706750631332,
+          "rmse": 0.026503048837184906
+        },
+        "utilization": {
+          "mae": 0.10208351910114288,
+          "rmse": 0.12644647061824799
+        },
+        "packet_loss": {
+          "mae": 0.04877156764268875,
+          "rmse": 0.059018928557634354
+        },
+        "jitter": {
+          "mae": 0.001094703795388341,
+          "rmse": 0.001218190649524331
+        },
+        "aggregate": {
+          "mae": 0.04398437589406967,
+          "rmse": 0.07102084159851074
+        }
+      },
+      "parameter_count": 2932,
+      "training_seconds": 2.869152999999642,
+      "inference_seconds": 0.021943600000668084,
+      "best_validation_epoch": 10,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.32400256395339966,
+          "validation_loss": 0.302658607562383
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.30822616815567017,
+          "validation_loss": 0.2897510230541229
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.2939263880252838,
+          "validation_loss": 0.2738807151714961
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.2736841638882955,
+          "validation_loss": 0.24656456212202707
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.24088007708390555,
+          "validation_loss": 0.2055786450703939
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.19480093320210776,
+          "validation_loss": 0.15444675087928772
+        },
+        {
+          "epoch": 7,
+          "train_loss": 0.14497732371091843,
+          "validation_loss": 0.11583111931880315
+        },
+        {
+          "epoch": 8,
+          "train_loss": 0.12174717336893082,
+          "validation_loss": 0.11313154796759288
+        },
+        {
+          "epoch": 9,
+          "train_loss": 0.12473336855570476,
+          "validation_loss": 0.11031369119882584
+        },
+        {
+          "epoch": 10,
+          "train_loss": 0.11575916161139806,
+          "validation_loss": 0.09579261144002278,
+          "best_validation_epoch": 10
+        }
+      ],
+      "recovered_checkpoint": false
+    },
+    {
+      "scenario": "normal",
+      "model": "directed_only",
+      "training_seed": 42,
+      "metrics": {
+        "delay": {
+          "mae": 0.026451392099261284,
+          "rmse": 0.03085065260529518
+        },
+        "utilization": {
+          "mae": 0.10464523732662201,
+          "rmse": 0.12598197162151337
+        },
+        "packet_loss": {
+          "mae": 0.056493598967790604,
+          "rmse": 0.06552166491746902
+        },
+        "jitter": {
+          "mae": 0.0009748307638801634,
+          "rmse": 0.0012146222870796919
+        },
+        "aggregate": {
+          "mae": 0.047141265124082565,
+          "rmse": 0.07265979051589966
+        }
+      },
+      "parameter_count": 8036,
+      "training_seconds": 4.2969258000011905,
+      "inference_seconds": 0.04498090000015509,
+      "best_validation_epoch": 10,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.32430989543596905,
+          "validation_loss": 0.29901179671287537
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.30429227153460187,
+          "validation_loss": 0.28295135498046875
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.28681522607803345,
+          "validation_loss": 0.2649747133255005
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.2652491380771001,
+          "validation_loss": 0.24007220069567362
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.23613024751345316,
+          "validation_loss": 0.2073819637298584
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.19987104833126068,
+          "validation_loss": 0.16823017100493112
+        },
+        {
+          "epoch": 7,
+          "train_loss": 0.15989798307418823,
+          "validation_loss": 0.12898911039034525
+        },
+        {
+          "epoch": 8,
+          "train_loss": 0.1263836001356443,
+          "validation_loss": 0.10715815424919128
+        },
+        {
+          "epoch": 9,
+          "train_loss": 0.11619605620702107,
+          "validation_loss": 0.10371663918097813
+        },
+        {
+          "epoch": 10,
+          "train_loss": 0.11459125578403473,
+          "validation_loss": 0.09656006097793579,
+          "best_validation_epoch": 10
+        }
+      ],
+      "recovered_checkpoint": false
+    },
+    {
+      "scenario": "normal",
+      "model": "congestion_only",
+      "training_seed": 42,
+      "metrics": {
+        "delay": {
+          "mae": 0.023429078981280327,
+          "rmse": 0.027516130357980728
+        },
+        "utilization": {
+          "mae": 0.10486926883459091,
+          "rmse": 0.12645424902439117
+        },
+        "packet_loss": {
+          "mae": 0.04951723292469978,
+          "rmse": 0.06548389047384262
+        },
+        "jitter": {
+          "mae": 0.0009160843910649419,
+          "rmse": 0.001094744075089693
+        },
+        "aggregate": {
+          "mae": 0.04468291625380516,
+          "rmse": 0.07252094894647598
+        }
+      },
+      "parameter_count": 8036,
+      "training_seconds": 3.946801600000981,
+      "inference_seconds": 0.03783909999947355,
+      "best_validation_epoch": 10,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.32418424884478253,
+          "validation_loss": 0.29881904522577923
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.3040028214454651,
+          "validation_loss": 0.2823882798353831
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.285833199818929,
+          "validation_loss": 0.26234200100104016
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.261956845720609,
+          "validation_loss": 0.235253835717837
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.23099862039089203,
+          "validation_loss": 0.20088003079096475
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.19298487404982248,
+          "validation_loss": 0.15882558127244314
+        },
+        {
+          "epoch": 7,
+          "train_loss": 0.1508669505516688,
+          "validation_loss": 0.11991861959298451
+        },
+        {
+          "epoch": 8,
+          "train_loss": 0.12040679156780243,
+          "validation_loss": 0.10339200496673584
+        },
+        {
+          "epoch": 9,
+          "train_loss": 0.11545324325561523,
+          "validation_loss": 0.10263865192731221
+        },
+        {
+          "epoch": 10,
+          "train_loss": 0.11339875062306722,
+          "validation_loss": 0.09370435525973637,
+          "best_validation_epoch": 10
+        }
+      ],
+      "recovered_checkpoint": false
+    },
+    {
+      "scenario": "normal",
+      "model": "proposed",
+      "training_seed": 42,
+      "metrics": {
+        "delay": {
+          "mae": 0.024941466748714447,
+          "rmse": 0.029635116457939148
+        },
+        "utilization": {
+          "mae": 0.10516036301851273,
+          "rmse": 0.1259489357471466
+        },
+        "packet_loss": {
+          "mae": 0.060870133340358734,
+          "rmse": 0.06882224977016449
+        },
+        "jitter": {
+          "mae": 0.000991769484244287,
+          "rmse": 0.0012399128172546625
+        },
+        "aggregate": {
+          "mae": 0.04799093306064606,
+          "rmse": 0.07327929139137268
+        }
+      },
+      "parameter_count": 8036,
+      "training_seconds": 4.383300399998916,
+      "inference_seconds": 0.048315699999875505,
+      "best_validation_epoch": 10,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.32433364788691205,
+          "validation_loss": 0.2990322212378184
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.3043234944343567,
+          "validation_loss": 0.28296394149462384
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.28672168652216595,
+          "validation_loss": 0.2647409935792287
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.26489173372586566,
+          "validation_loss": 0.23962400356928507
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.23537482817967734,
+          "validation_loss": 0.2064328988393148
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.19852163890997568,
+          "validation_loss": 0.16690637667973837
+        },
+        {
+          "epoch": 7,
+          "train_loss": 0.1581404854853948,
+          "validation_loss": 0.12799931317567825
+        },
+        {
+          "epoch": 8,
+          "train_loss": 0.1257340187827746,
+          "validation_loss": 0.10861584295829137
+        },
+        {
+          "epoch": 9,
+          "train_loss": 0.1173398569226265,
+          "validation_loss": 0.10519857704639435
+        },
+        {
+          "epoch": 10,
+          "train_loss": 0.11453984429438908,
+          "validation_loss": 0.09658442189296086,
+          "best_validation_epoch": 10
+        }
+      ],
+      "recovered_checkpoint": false
+    },
+    {
+      "scenario": "normal",
+      "model": "reference",
+      "training_seed": 123,
+      "metrics": {
+        "delay": {
+          "mae": 0.0211799219250679,
+          "rmse": 0.026740048080682755
+        },
+        "utilization": {
+          "mae": 0.09998349845409393,
+          "rmse": 0.12770460546016693
+        },
+        "packet_loss": {
+          "mae": 0.03779200464487076,
+          "rmse": 0.050677645951509476
+        },
+        "jitter": {
+          "mae": 0.0012667294358834624,
+          "rmse": 0.001937317312695086
+        },
+        "aggregate": {
+          "mae": 0.0400555357336998,
+          "rmse": 0.06999191641807556
+        }
+      },
+      "parameter_count": 8036,
+      "training_seconds": 4.599548300000606,
+      "inference_seconds": 0.039702699999907054,
+      "best_validation_epoch": 10,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.3372749288876851,
+          "validation_loss": 0.31367884079615277
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.3203461666901906,
+          "validation_loss": 0.29757335782051086
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.3032226065794627,
+          "validation_loss": 0.27966201305389404
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.28469423453013104,
+          "validation_loss": 0.262441948056221
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.26583421727021533,
+          "validation_loss": 0.2409514586130778
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.2406186411778132,
+          "validation_loss": 0.2113723357518514
+        },
+        {
+          "epoch": 7,
+          "train_loss": 0.2082949032386144,
+          "validation_loss": 0.17623457809289297
+        },
+        {
+          "epoch": 8,
+          "train_loss": 0.17324564357598624,
+          "validation_loss": 0.14271987229585648
+        },
+        {
+          "epoch": 9,
+          "train_loss": 0.1419571911295255,
+          "validation_loss": 0.11477519820133845
+        },
+        {
+          "epoch": 10,
+          "train_loss": 0.12000154207150142,
+          "validation_loss": 0.10231847316026688,
+          "best_validation_epoch": 10
+        }
+      ],
+      "recovered_checkpoint": false
+    },
+    {
+      "scenario": "normal",
+      "model": "current",
+      "training_seed": 123,
+      "metrics": {
+        "delay": {
+          "mae": 0.01537392009049654,
+          "rmse": 0.018474439159035683
+        },
+        "utilization": {
+          "mae": 0.09899833053350449,
+          "rmse": 0.12779444456100464
+        },
+        "packet_loss": {
+          "mae": 0.0662980005145073,
+          "rmse": 0.07298390567302704
+        },
+        "jitter": {
+          "mae": 0.0008039191598072648,
+          "rmse": 0.0009114478016272187
+        },
+        "aggregate": {
+          "mae": 0.04536854475736618,
+          "rmse": 0.0741623267531395
+        }
+      },
+      "parameter_count": 2932,
+      "training_seconds": 1.7924616000000242,
+      "inference_seconds": 0.030067399999097688,
+      "best_validation_epoch": 10,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.33499957124392193,
+          "validation_loss": 0.3023237884044647
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.30826353033383685,
+          "validation_loss": 0.28904597957928974
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.29318471749623615,
+          "validation_loss": 0.26740820209185284
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.2662182201941808,
+          "validation_loss": 0.2292086879412333
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.2245053599278132,
+          "validation_loss": 0.17656395335992178
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.16838994125525156,
+          "validation_loss": 0.11740675816933314
+        },
+        {
+          "epoch": 7,
+          "train_loss": 0.1195830578605334,
+          "validation_loss": 0.09823681165774663
+        },
+        {
+          "epoch": 8,
+          "train_loss": 0.11272802948951721,
+          "validation_loss": 0.10966890801986058
+        },
+        {
+          "epoch": 9,
+          "train_loss": 0.11777835090955098,
+          "validation_loss": 0.09895053505897522
+        },
+        {
+          "epoch": 10,
+          "train_loss": 0.10583291202783585,
+          "validation_loss": 0.08915187418460846,
+          "best_validation_epoch": 10
+        }
+      ],
+      "recovered_checkpoint": false
+    },
+    {
+      "scenario": "normal",
+      "model": "directed_only",
+      "training_seed": 123,
+      "metrics": {
+        "delay": {
+          "mae": 0.024956976994872093,
+          "rmse": 0.029751766473054886
+        },
+        "utilization": {
+          "mae": 0.09996454417705536,
+          "rmse": 0.12769411504268646
+        },
+        "packet_loss": {
+          "mae": 0.028884287923574448,
+          "rmse": 0.03480265662074089
+        },
+        "jitter": {
+          "mae": 0.0013367384672164917,
+          "rmse": 0.0018555407878011465
+        },
+        "aggregate": {
+          "mae": 0.03878564015030861,
+          "rmse": 0.06783366203308105
+        }
+      },
+      "parameter_count": 8036,
+      "training_seconds": 4.648045800000546,
+      "inference_seconds": 0.06046750000132306,
+      "best_validation_epoch": 10,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.3369811773300171,
+          "validation_loss": 0.31336339314778644
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.31990107893943787,
+          "validation_loss": 0.2970126271247864
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.30252305666605633,
+          "validation_loss": 0.2787339488665263
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.28362466891606647,
+          "validation_loss": 0.26118622720241547
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.26407432556152344,
+          "validation_loss": 0.23855931560198465
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.23723617692788443,
+          "validation_loss": 0.207475612560908
+        },
+        {
+          "epoch": 7,
+          "train_loss": 0.20331794520219168,
+          "validation_loss": 0.17176146308581033
+        },
+        {
+          "epoch": 8,
+          "train_loss": 0.16752134760220846,
+          "validation_loss": 0.13852843145529428
+        },
+        {
+          "epoch": 9,
+          "train_loss": 0.1368912955125173,
+          "validation_loss": 0.11328695466121037
+        },
+        {
+          "epoch": 10,
+          "train_loss": 0.118274986743927,
+          "validation_loss": 0.10464444011449814,
+          "best_validation_epoch": 10
+        }
+      ],
+      "recovered_checkpoint": false
+    },
+    {
+      "scenario": "normal",
+      "model": "congestion_only",
+      "training_seed": 123,
+      "metrics": {
+        "delay": {
+          "mae": 0.02057187631726265,
+          "rmse": 0.025944380089640617
+        },
+        "utilization": {
+          "mae": 0.09987374395132065,
+          "rmse": 0.12730664014816284
+        },
+        "packet_loss": {
+          "mae": 0.035903625190258026,
+          "rmse": 0.0438375361263752
+        },
+        "jitter": {
+          "mae": 0.001214823336340487,
+          "rmse": 0.0018507741624489427
+        },
+        "aggregate": {
+          "mae": 0.039391014724969864,
+          "rmse": 0.06856610625982285
+        }
+      },
+      "parameter_count": 8036,
+      "training_seconds": 8.62605590000021,
+      "inference_seconds": 0.059210900000834954,
+      "best_validation_epoch": 10,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.33714036146799725,
+          "validation_loss": 0.3135263919830322
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.32015031576156616,
+          "validation_loss": 0.2973852852980296
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.30291489760080975,
+          "validation_loss": 0.2793278992176056
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.2842266062895457,
+          "validation_loss": 0.2620874543984731
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.26514361798763275,
+          "validation_loss": 0.24014316499233246
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.2392372985680898,
+          "validation_loss": 0.2098348488410314
+        },
+        {
+          "epoch": 7,
+          "train_loss": 0.2062071313460668,
+          "validation_loss": 0.17447412014007568
+        },
+        {
+          "epoch": 8,
+          "train_loss": 0.17080498735109964,
+          "validation_loss": 0.14055728415648142
+        },
+        {
+          "epoch": 9,
+          "train_loss": 0.13921145101388296,
+          "validation_loss": 0.112546406686306
+        },
+        {
+          "epoch": 10,
+          "train_loss": 0.11766574531793594,
+          "validation_loss": 0.10098732262849808,
+          "best_validation_epoch": 10
+        }
+      ],
+      "recovered_checkpoint": false
+    },
+    {
+      "scenario": "normal",
+      "model": "proposed",
+      "training_seed": 123,
+      "metrics": {
+        "delay": {
+          "mae": 0.025697557255625725,
+          "rmse": 0.030693726614117622
+        },
+        "utilization": {
+          "mae": 0.1000407263636589,
+          "rmse": 0.12762276828289032
+        },
+        "packet_loss": {
+          "mae": 0.03023638017475605,
+          "rmse": 0.036601483821868896
+        },
+        "jitter": {
+          "mae": 0.0013586063869297504,
+          "rmse": 0.0018725940026342869
+        },
+        "aggregate": {
+          "mae": 0.039333321154117584,
+          "rmse": 0.06814112514257431
+        }
+      },
+      "parameter_count": 8036,
+      "training_seconds": 3.9371852000003855,
+      "inference_seconds": 0.038802500001111184,
+      "best_validation_epoch": 10,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.33695223927497864,
+          "validation_loss": 0.3133728305498759
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.3198658227920532,
+          "validation_loss": 0.2969910800457001
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.3023771246274312,
+          "validation_loss": 0.2785545488198598
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.28320734699567157,
+          "validation_loss": 0.26062150796254474
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.26324354112148285,
+          "validation_loss": 0.23774867753187814
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.23618010183175406,
+          "validation_loss": 0.206484188636144
+        },
+        {
+          "epoch": 7,
+          "train_loss": 0.202069620291392,
+          "validation_loss": 0.17094058791796365
+        },
+        {
+          "epoch": 8,
+          "train_loss": 0.16659011940161386,
+          "validation_loss": 0.1381819893916448
+        },
+        {
+          "epoch": 9,
+          "train_loss": 0.1365165039896965,
+          "validation_loss": 0.11348854502042134
+        },
+        {
+          "epoch": 10,
+          "train_loss": 0.11900233725706737,
+          "validation_loss": 0.10594885051250458,
+          "best_validation_epoch": 10
+        }
+      ],
+      "recovered_checkpoint": false
+    },
+    {
+      "scenario": "normal",
+      "model": "reference",
+      "training_seed": 2026,
+      "metrics": {
+        "delay": {
+          "mae": 0.011201171204447746,
+          "rmse": 0.015926284715533257
+        },
+        "utilization": {
+          "mae": 0.10100553929805756,
+          "rmse": 0.12637057900428772
+        },
+        "packet_loss": {
+          "mae": 0.028053363785147667,
+          "rmse": 0.0320989266037941
+        },
+        "jitter": {
+          "mae": 0.0005249750684015453,
+          "rmse": 0.0007624885765835643
+        },
+        "aggregate": {
+          "mae": 0.03519626334309578,
+          "rmse": 0.06567741930484772
+        }
+      },
+      "parameter_count": 8036,
+      "training_seconds": 6.68151190000026,
+      "inference_seconds": 0.09169069999916246,
+      "best_validation_epoch": 10,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.3182610869407654,
+          "validation_loss": 0.2939058641592662
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.29699737826983136,
+          "validation_loss": 0.2707628806432088
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.27086342374483746,
+          "validation_loss": 0.24048544963200888
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.23667766650517783,
+          "validation_loss": 0.2008180469274521
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.19338578979174295,
+          "validation_loss": 0.1536838412284851
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.1471416875720024,
+          "validation_loss": 0.11285145829121272
+        },
+        {
+          "epoch": 7,
+          "train_loss": 0.11659460763136546,
+          "validation_loss": 0.09908238053321838
+        },
+        {
+          "epoch": 8,
+          "train_loss": 0.11291753500699997,
+          "validation_loss": 0.10091212888558705
+        },
+        {
+          "epoch": 9,
+          "train_loss": 0.11355199168125789,
+          "validation_loss": 0.09237112104892731
+        },
+        {
+          "epoch": 10,
+          "train_loss": 0.10312921802202861,
+          "validation_loss": 0.08412440990408261,
+          "best_validation_epoch": 10
+        }
+      ],
+      "recovered_checkpoint": false
+    },
+    {
+      "scenario": "normal",
+      "model": "current",
+      "training_seed": 2026,
+      "metrics": {
+        "delay": {
+          "mae": 0.015227817930281162,
+          "rmse": 0.01735007017850876
+        },
+        "utilization": {
+          "mae": 0.10451865941286087,
+          "rmse": 0.12759284675121307
+        },
+        "packet_loss": {
+          "mae": 0.04592176526784897,
+          "rmse": 0.05249066278338432
+        },
+        "jitter": {
+          "mae": 0.0006337396916933358,
+          "rmse": 0.000775015854742378
+        },
+        "aggregate": {
+          "mae": 0.04157549515366554,
+          "rmse": 0.06952846050262451
+        }
+      },
+      "parameter_count": 2932,
+      "training_seconds": 3.877331100000447,
+      "inference_seconds": 0.033580900000742986,
+      "best_validation_epoch": 9,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.31989378730456036,
+          "validation_loss": 0.298071692387263
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.3029300272464752,
+          "validation_loss": 0.28033653895060223
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.28042905529340106,
+          "validation_loss": 0.24766368170579275
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.24198584258556366,
+          "validation_loss": 0.19766988356908163
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.18680316706498465,
+          "validation_loss": 0.1383675162990888
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.1325718859831492,
+          "validation_loss": 0.10426149765650432
+        },
+        {
+          "epoch": 7,
+          "train_loss": 0.11396639049053192,
+          "validation_loss": 0.107612910370032
+        },
+        {
+          "epoch": 8,
+          "train_loss": 0.11670469492673874,
+          "validation_loss": 0.0988763098915418
+        },
+        {
+          "epoch": 9,
+          "train_loss": 0.10515835384527843,
+          "validation_loss": 0.0875818207859993
+        },
+        {
+          "epoch": 10,
+          "train_loss": 0.09947731842597325,
+          "validation_loss": 0.08929713815450668,
+          "best_validation_epoch": 9
+        }
+      ],
+      "recovered_checkpoint": false
+    },
+    {
+      "scenario": "normal",
+      "model": "directed_only",
+      "training_seed": 2026,
+      "metrics": {
+        "delay": {
+          "mae": 0.011244365945458412,
+          "rmse": 0.015334350988268852
+        },
+        "utilization": {
+          "mae": 0.10108812153339386,
+          "rmse": 0.12630830705165863
+        },
+        "packet_loss": {
+          "mae": 0.03292471915483475,
+          "rmse": 0.037481583654880524
+        },
+        "jitter": {
+          "mae": 0.0005361359799280763,
+          "rmse": 0.000743394426535815
+        },
+        "aggregate": {
+          "mae": 0.03644833713769913,
+          "rmse": 0.06632185727357864
+        }
+      },
+      "parameter_count": 8036,
+      "training_seconds": 5.461607900000672,
+      "inference_seconds": 0.04542039999978442,
+      "best_validation_epoch": 10,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.31799769401550293,
+          "validation_loss": 0.29339046279589337
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.29616880416870117,
+          "validation_loss": 0.2693946609894435
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.2690019855896632,
+          "validation_loss": 0.2377927452325821
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.23301841815312704,
+          "validation_loss": 0.19645176331202188
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.1877825806538264,
+          "validation_loss": 0.1489830215771993
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.1425118570526441,
+          "validation_loss": 0.1126370057463646
+        },
+        {
+          "epoch": 7,
+          "train_loss": 0.11663139859835307,
+          "validation_loss": 0.10087278485298157
+        },
+        {
+          "epoch": 8,
+          "train_loss": 0.11348956574996312,
+          "validation_loss": 0.09862588594357173
+        },
+        {
+          "epoch": 9,
+          "train_loss": 0.11062256743510564,
+          "validation_loss": 0.08965447296698888
+        },
+        {
+          "epoch": 10,
+          "train_loss": 0.10062283525864284,
+          "validation_loss": 0.08380280062556267,
+          "best_validation_epoch": 10
+        }
+      ],
+      "recovered_checkpoint": false
+    },
+    {
+      "scenario": "normal",
+      "model": "congestion_only",
+      "training_seed": 2026,
+      "metrics": {
+        "delay": {
+          "mae": 0.011897525750100613,
+          "rmse": 0.016268247738480568
+        },
+        "utilization": {
+          "mae": 0.10094189643859863,
+          "rmse": 0.1264656037092209
+        },
+        "packet_loss": {
+          "mae": 0.02544107660651207,
+          "rmse": 0.029888588935136795
+        },
+        "jitter": {
+          "mae": 0.0005392823950387537,
+          "rmse": 0.0007545302505604923
+        },
+        "aggregate": {
+          "mae": 0.03470494598150253,
+          "rmse": 0.06548301875591278
+        }
+      },
+      "parameter_count": 8036,
+      "training_seconds": 7.580410699998538,
+      "inference_seconds": 0.0625514999992447,
+      "best_validation_epoch": 10,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.3181193470954895,
+          "validation_loss": 0.2937510510285695
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.2966839075088501,
+          "validation_loss": 0.2702932407458623
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.2701765100161235,
+          "validation_loss": 0.23948908845583597
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.2353340188662211,
+          "validation_loss": 0.19900371630986533
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.19125606616338095,
+          "validation_loss": 0.15138268719116846
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.14508448789517084,
+          "validation_loss": 0.11173678934574127
+        },
+        {
+          "epoch": 7,
+          "train_loss": 0.11586849143107732,
+          "validation_loss": 0.09838072707255681
+        },
+        {
+          "epoch": 8,
+          "train_loss": 0.11231890072425206,
+          "validation_loss": 0.09989058474699657
+        },
+        {
+          "epoch": 9,
+          "train_loss": 0.1132611632347107,
+          "validation_loss": 0.0925130546092987
+        },
+        {
+          "epoch": 10,
+          "train_loss": 0.10325577110052109,
+          "validation_loss": 0.08397118498881657,
+          "best_validation_epoch": 10
+        }
+      ],
+      "recovered_checkpoint": false
+    },
+    {
+      "scenario": "normal",
+      "model": "proposed",
+      "training_seed": 2026,
+      "metrics": {
+        "delay": {
+          "mae": 0.0113026462495327,
+          "rmse": 0.01546778716146946
+        },
+        "utilization": {
+          "mae": 0.10087769478559494,
+          "rmse": 0.12626862525939941
+        },
+        "packet_loss": {
+          "mae": 0.031836383044719696,
+          "rmse": 0.03648858517408371
+        },
+        "jitter": {
+          "mae": 0.0005542933358810842,
+          "rmse": 0.0007691906066611409
+        },
+        "aggregate": {
+          "mae": 0.036142755299806595,
+          "rmse": 0.06617217510938644
+        }
+      },
+      "parameter_count": 8036,
+      "training_seconds": 5.919833900001322,
+      "inference_seconds": 0.04832109999915701,
+      "best_validation_epoch": 10,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.317845622698466,
+          "validation_loss": 0.29303263624509174
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.2957155406475067,
+          "validation_loss": 0.2686980217695236
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.26793422798315686,
+          "validation_loss": 0.2364936570326487
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.23121092716852823,
+          "validation_loss": 0.19452651838461557
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.18523278832435608,
+          "validation_loss": 0.1470560704668363
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.14043519645929337,
+          "validation_loss": 0.1122287188967069
+        },
+        {
+          "epoch": 7,
+          "train_loss": 0.11679804821809132,
+          "validation_loss": 0.10242995123068492
+        },
+        {
+          "epoch": 8,
+          "train_loss": 0.11463562399148941,
+          "validation_loss": 0.09882290909687678
+        },
+        {
+          "epoch": 9,
+          "train_loss": 0.11002753178278606,
+          "validation_loss": 0.08902169018983841
+        },
+        {
+          "epoch": 10,
+          "train_loss": 0.09975649913152058,
+          "validation_loss": 0.08403249084949493,
+          "best_validation_epoch": 10
+        }
+      ],
+      "recovered_checkpoint": false
+    }
+  ],
+  "summary_by_scenario_model": {
+    "normal::reference": {
+      "delay": {
+        "mae": {
+          "mean": 0.01897426260014375,
+          "std": 0.005665162038463009
+        },
+        "rmse": {
+          "mean": 0.02370018574098746,
+          "std": 0.0055403195598604715
+        }
+      },
+      "utilization": {
+        "mae": {
+          "mean": 0.10181062916914622,
+          "std": 0.0019074556844586848
+        },
+        "rmse": {
+          "mean": 0.12690804402033487,
+          "std": 0.0005746041326339394
+        }
+      },
+      "packet_loss": {
+        "mae": {
+          "mean": 0.04393679338196913,
+          "std": 0.016075697676385076
+        },
+        "rmse": {
+          "mean": 0.05015918736656507,
+          "std": 0.014539104073378432
+        }
+      },
+      "jitter": {
+        "mae": {
+          "mean": 0.0009110926960905393,
+          "std": 0.00030358601067333386
+        },
+        "rmse": {
+          "mean": 0.0012779041038205226,
+          "std": 0.0004903108803171736
+        }
+      },
+      "aggregate": {
+        "mae": {
+          "mean": 0.04140819360812505,
+          "std": 0.005704990641605159
+        },
+        "rmse": {
+          "mean": 0.06962322940429051,
+          "std": 0.003082269565593087
+        }
+      },
+      "parameter_count": {
+        "mean": 8036.0,
+        "std": 0.0
+      },
+      "training_seconds": {
+        "mean": 7.678351766666917,
+        "std": 3.0046402494959885
+      },
+      "inference_seconds": {
+        "mean": 0.07434339999963413,
+        "std": 0.024494683758668947
+      }
+    },
+    "normal::current": {
+      "delay": {
+        "mae": {
+          "mean": 0.018196481590469677,
+          "std": 0.004095448945848056
+        },
+        "rmse": {
+          "mean": 0.020775852724909782,
+          "std": 0.004075670323798467
+        }
+      },
+      "utilization": {
+        "mae": {
+          "mean": 0.10186683634916942,
+          "std": 0.0022588671637668476
+        },
+        "rmse": {
+          "mean": 0.12727792064348856,
+          "std": 0.0005936566221773942
+        }
+      },
+      "packet_loss": {
+        "mae": {
+          "mean": 0.053663777808348335,
+          "std": 0.0090091816474649
+        },
+        "rmse": {
+          "mean": 0.061497832338015236,
+          "std": 0.008547981204072413
+        }
+      },
+      "jitter": {
+        "mae": {
+          "mean": 0.0008441208822963139,
+          "std": 0.00019032272607713766
+        },
+        "rmse": {
+          "mean": 0.0009682181019646426,
+          "std": 0.0001853251645672322
+        }
+      },
+      "aggregate": {
+        "mae": {
+          "mean": 0.043642805268367134,
+          "std": 0.0015672288055227736
+        },
+        "rmse": {
+          "mean": 0.07157054295142491,
+          "std": 0.0019312876171028498
+        }
+      },
+      "parameter_count": {
+        "mean": 2932.0,
+        "std": 0.0
+      },
+      "training_seconds": {
+        "mean": 2.846315233333371,
+        "std": 0.851297590230244
+      },
+      "inference_seconds": {
+        "mean": 0.02853063333350292,
+        "std": 0.004873597347702432
+      }
+    },
+    "normal::directed_only": {
+      "delay": {
+        "mae": {
+          "mean": 0.020884245013197262,
+          "std": 0.006843672038534521
+        },
+        "rmse": {
+          "mean": 0.025312256688872974,
+          "std": 0.007069693030135452
+        }
+      },
+      "utilization": {
+        "mae": {
+          "mean": 0.10189930101235707,
+          "std": 0.0019951159031358417
+        },
+        "rmse": {
+          "mean": 0.12666146457195282,
+          "std": 0.0007422483633177571
+        }
+      },
+      "packet_loss": {
+        "mae": {
+          "mean": 0.03943420201539993,
+          "std": 0.012175071236425763
+        },
+        "rmse": {
+          "mean": 0.045935301731030144,
+          "std": 0.013892765015572607
+        }
+      },
+      "jitter": {
+        "mae": {
+          "mean": 0.0009492350703415772,
+          "std": 0.00032734532256613476
+        },
+        "rmse": {
+          "mean": 0.001271185833805551,
+          "std": 0.0004557901259224364
+        }
+      },
+      "aggregate": {
+        "mae": {
+          "mean": 0.04079174747069677,
+          "std": 0.004590063700805742
+        },
+        "rmse": {
+          "mean": 0.06893843660751979,
+          "std": 0.0027028065156147296
+        }
+      },
+      "parameter_count": {
+        "mean": 8036.0,
+        "std": 0.0
+      },
+      "training_seconds": {
+        "mean": 4.802193166667469,
+        "std": 0.48781291256830617
+      },
+      "inference_seconds": {
+        "mean": 0.050289600000420855,
+        "std": 0.007199098387237685
+      }
+    },
+    "normal::congestion_only": {
+      "delay": {
+        "mae": {
+          "mean": 0.01863282701621453,
+          "std": 0.004903339958627128
+        },
+        "rmse": {
+          "mean": 0.023242919395367306,
+          "std": 0.004973404820813818
+        }
+      },
+      "utilization": {
+        "mae": {
+          "mean": 0.1018949697415034,
+          "std": 0.0021478793813706027
+        },
+        "rmse": {
+          "mean": 0.12674216429392496,
+          "std": 0.00039917162117739026
+        }
+      },
+      "packet_loss": {
+        "mae": {
+          "mean": 0.03695397824048996,
+          "std": 0.009857070454316915
+        },
+        "rmse": {
+          "mean": 0.046403338511784874,
+          "std": 0.01464454117452595
+        }
+      },
+      "jitter": {
+        "mae": {
+          "mean": 0.0008900633741480609,
+          "std": 0.0002764015325991632
+        },
+        "rmse": {
+          "mean": 0.0012333494960330427,
+          "std": 0.00045814573782024536
+        }
+      },
+      "aggregate": {
+        "mae": {
+          "mean": 0.039592958986759186,
+          "std": 0.004075991396980696
+        },
+        "rmse": {
+          "mean": 0.0688566913207372,
+          "std": 0.002880560720881752
+        }
+      },
+      "parameter_count": {
+        "mean": 8036.0,
+        "std": 0.0
+      },
+      "training_seconds": {
+        "mean": 6.717756066666577,
+        "std": 2.0053237416640313
+      },
+      "inference_seconds": {
+        "mean": 0.05320049999985107,
+        "std": 0.010947430735597055
+      }
+    },
+    "normal::proposed": {
+      "delay": {
+        "mae": {
+          "mean": 0.020647223417957623,
+          "std": 0.006614819728264035
+        },
+        "rmse": {
+          "mean": 0.02526554341117541,
+          "std": 0.006941526465755692
+        }
+      },
+      "utilization": {
+        "mae": {
+          "mean": 0.10202626138925552,
+          "std": 0.0022423311979149455
+        },
+        "rmse": {
+          "mean": 0.1266134430964788,
+          "std": 0.000725535822687677
+        }
+      },
+      "packet_loss": {
+        "mae": {
+          "mean": 0.040980965519944824,
+          "std": 0.01407892632595289
+        },
+        "rmse": {
+          "mean": 0.04730410625537237,
+          "std": 0.015215695005893547
+        }
+      },
+      "jitter": {
+        "mae": {
+          "mean": 0.0009682230690183739,
+          "std": 0.00032878128117265324
+        },
+        "rmse": {
+          "mean": 0.0012938991421833634,
+          "std": 0.0004520771733681085
+        }
+      },
+      "aggregate": {
+        "mae": {
+          "mean": 0.04115566983819008,
+          "std": 0.00500569975846656
+        },
+        "rmse": {
+          "mean": 0.06919753054777782,
+          "std": 0.002996082970204691
+        }
+      },
+      "parameter_count": {
+        "mean": 8036.0,
+        "std": 0.0
+      },
+      "training_seconds": {
+        "mean": 4.746773166666874,
+        "std": 0.8492382099999175
+      },
+      "inference_seconds": {
+        "mean": 0.04514643333338123,
+        "std": 0.004485838820348118
+      }
+    }
+  }
+}

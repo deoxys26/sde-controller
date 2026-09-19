@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Admin\OneDrive\Desktop\DN_proj\src\gnn\run_experiment.py", line 135, in <module>
+    main()
+  File "C:\Users\Admin\OneDrive\Desktop\DN_proj\src\gnn\run_experiment.py", line 127, in main
+    report = run_study(config, args.output_dir, seeds=args.seeds, scenarios=args.scenarios, models=args.models)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\OneDrive\Desktop\DN_proj\src\gnn\run_experiment.py", line 103, in run_study
+    records = [run_configuration(scenario, model, seed, config, output_dir)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\OneDrive\Desktop\DN_proj\src\gnn\run_experiment.py", line 81, in run_configuration
+    history, metrics, _ = train_model(model, dataset, training)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\OneDrive\Desktop\DN_proj\src\gnn\train.py", line 51, in train_model
+    torch.save(model.state_dict(), checkpoint)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\serialization.py", line 1003, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\serialization.py", line 865, in _open_zipfile_writer
+    return container(name_or_buffer)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\serialization.py", line 829, in __init__
+    torch._C.PyTorchFileWriter(
+RuntimeError: [enforce fail at inline_container.cc:745] . open file failed with error code: 1224

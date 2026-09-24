@@ -71,6 +71,14 @@ gnn_experiment:
   batch_size: 4
   seeds: [42, 123, 2026]
 
+# Phase 7: frozen-checkpoint, causal routing comparison.  These parameters are
+# deliberately separated from Phase 4.5 training to prevent test-result tuning.
+phase7:
+  checkpoint_dir: "data/experiments/phase4_5_multiseed/checkpoints"
+  forecast_model: "current"
+  forecast_training_seed: 42
+  default_capacity_mbps: 350.0
+
 # Phase 5: UNSW-NB15 binary anomaly detection settings.
 security:
   random_seed: 42

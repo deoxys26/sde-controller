@@ -29,3 +29,11 @@ Tournament selection chooses the lower-fitness member of a seeded random subset.
 ## Configuration and limitations
 
 Defaults: population 24, generations 12, mutation rate 0.20, crossover rate 0.80, two elites, tournament size three, maximum path length eight, and seed 42. The implementation is appropriate for small synthetic topology validation, not large graphs where enumerating simple paths becomes expensive. It has no final routing-performance claim and does not preselect any Phase 4.5 forecasting model.
+
+## Implementation validation (not a routing-performance experiment)
+
+The deterministic unit fixture verifies a feasible path `[0, 1, 3]` with delay `2 + 3 = 5`, bottleneck utilization `max(0.2, 0.2) = 0.2`, packet loss `1 - (1 - 0.1)(1 - 0.2) = 0.28`, jitter `1 + 2 = 3`, and supplied-risk aggregation `1 - (1 - 0.1)(1 - 0.3) = 0.37`. It rejects a competing path when its available capacity is below demand, checks simple directed paths after crossover/mutation, checks seeded repeatability, and checks clean no-path failure. A security-only objective test confirms a higher supplied path risk produces a higher normalized fitness.
+
+On the existing seeded 8-node project topology, the same GA interface accepted Phase 3 current telemetry and link forecasts produced by saved Model A, Model B, and Model C Phase 4.5 checkpoints. The validation request was from node 0 to node 1 with demand 5 Mbps; current telemetry selected `[0, 1]`, Model A selected `[0, 7, 1]`, Model B selected `[0, 1]`, and Model C selected `[0, 7, 1]`. These are interface checks only. They do not compare routing quality, use future ground truth for predicted-QoS routing, or establish that any forecasting model improves routing.
+
+The current-state GA is invoked only with the completed current telemetry record supplied at its routing decision. Predicted-QoS validation supplies only model outputs plus static topology capacity fallback; it does not supply the target timestep's observed QoS. The Phase 5 Random Forest was not retrained or joined to simulator data.

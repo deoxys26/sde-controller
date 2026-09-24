@@ -56,13 +56,25 @@ class NetworkSimulator:
             return base_capacity * self.degradation_capacity_factor
         return base_capacity
 
-    def step(self, timestep: int):
-        demands = self.traffic_generator.generate(timestep)
+    def evaluate_selected_paths(self, timestep: int, demands, selected_paths):
+        """Apply caller-selected paths to one timestep and return realized QoS.
+
+        This is the public control boundary used by comparative routing
+        experiments.  It deliberately does not choose routes or inspect future
+        telemetry: callers supply one path (or ``None``) for each supplied
+        demand, and the existing simulator physics updates only this simulator
+        instance's queue state.
+        """
+        if len(demands) != len(selected_paths):
+            raise ValueError("demands and selected_paths must have the same length")
         routed, loads = [], defaultdict(float)
-        # Decisions consult only completed telemetry from earlier timesteps.
-        for demand in demands:
-            path = self.routing_strategy.select_path(self.graph, demand["source"], demand["destination"],
-                                                     self.previous_telemetry)
+        for demand, supplied_path in zip(demands, selected_paths):
+            path = list(supplied_path) if supplied_path is not None else None
+            if path is not None and (len(path) < 2 or path[0] != demand["source"] or
+                                     path[-1] != demand["destination"] or
+                                     len(path) != len(set(path)) or
+                                     any(not self.graph.has_edge(u, v) for u, v in self._edges(path))):
+                raise ValueError("selected path is not a valid simple directed path for its demand")
             record = dict(demand, selected_path=path, path_length=(len(path) - 1 if path else None))
             routed.append(record)
             if path:
@@ -105,6 +117,13 @@ class NetworkSimulator:
                               "jitter": sum(row["jitter"] for row in hops)})
         self.previous_telemetry = link_rows
         return flow_rows, link_rows
+
+    def step(self, timestep: int):
+        demands = self.traffic_generator.generate(timestep)
+        # Decisions consult only completed telemetry from earlier timesteps.
+        paths = [self.routing_strategy.select_path(self.graph, demand["source"], demand["destination"],
+                                                   self.previous_telemetry) for demand in demands]
+        return self.evaluate_selected_paths(timestep, demands, paths)
 
     def run(self, timesteps=None):
         all_flows, all_links = [], []

@@ -35,6 +35,15 @@ def test_path_objectives_and_capacity_constraints():
     assert not GeneticRouter(graph, provider).valid_path([0, 1, 0, 2, 3], 0, 3)
 
 
+def test_population_normalized_security_weight_changes_fitness():
+    graph, provider = _graph_and_provider()
+    router = GeneticRouter(graph, provider, {"objective_weights": {"delay": 0, "utilization": 0,
+                                               "packet_loss": 0, "jitter": 0, "security_risk": 1}})
+    scored = {tuple(path): fitness for path, fitness, _ in router.scored_population([[0, 1, 3], [0, 2, 3]])}
+    assert scored[(0, 1, 3)] == 1.0
+    assert scored[(0, 2, 3)] == 0.0
+
+
 def test_population_operators_elitism_and_determinism():
     router = _router()
     population = router.initial_population(0, 3, 10)

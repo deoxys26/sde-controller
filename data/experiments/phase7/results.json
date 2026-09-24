@@ -1,0 +1,760 @@
+{
+  "protocol": {
+    "scenarios": [
+      "normal",
+      "low_load",
+      "medium_load",
+      "high_load",
+      "increasing_load",
+      "congestion",
+      "traffic_spike",
+      "link_degradation",
+      "recovery",
+      "anomalous_traffic"
+    ],
+    "methods": [
+      "shortest_path",
+      "reactive",
+      "current_qos_ga",
+      "predicted_qos_ga"
+    ],
+    "forecast_model": "current",
+    "forecast_training_seed": 42,
+    "evaluation_window": "Phase 4.5 held-out chronological test target period",
+    "selection": "No retraining, tuning, or test-set model selection."
+  },
+  "scenario_results": [
+    {
+      "scenario": "normal",
+      "evaluation_start_timestep": 19,
+      "evaluation_timesteps": 5,
+      "methods": {
+        "shortest_path": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 1.9979166666666666,
+          "mean_link_utilization": 0.08267363307498768,
+          "mean_link_packet_loss": 0.0,
+          "mean_link_jitter": 0.09989583333333334,
+          "mean_link_throughput": 28.853943541666663,
+          "mean_successful_flow_delay": 3.1486666666666667,
+          "mean_flow_throughput": 75.12329726666665
+        },
+        "reactive": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 1.9979166666666666,
+          "mean_link_utilization": 0.08266621657521253,
+          "mean_link_packet_loss": 0.0,
+          "mean_link_jitter": 0.09989583333333334,
+          "mean_link_throughput": 28.85394354166667,
+          "mean_successful_flow_delay": 3.1613333333333338,
+          "mean_flow_throughput": 75.12329726666665
+        },
+        "current_qos_ga": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 1.9979170557622439,
+          "mean_link_utilization": 0.10044423141332816,
+          "mean_link_packet_loss": 0.0,
+          "mean_link_jitter": 0.09989604733590074,
+          "mean_link_throughput": 34.9830941,
+          "mean_successful_flow_delay": 3.8096666666666676,
+          "mean_flow_throughput": 75.12329726666665
+        },
+        "predicted_qos_ga": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 1.9979166666666666,
+          "mean_link_utilization": 0.08543178858430935,
+          "mean_link_packet_loss": 0.0,
+          "mean_link_jitter": 0.09989583333333334,
+          "mean_link_throughput": 29.598547791666668,
+          "mean_successful_flow_delay": 3.238333333333334,
+          "mean_flow_throughput": 75.12329726666665
+        }
+      },
+      "causality": "All evaluated decisions use only telemetry completed before the decision timestep; realized QoS is computed after selected routes are applied."
+    },
+    {
+      "scenario": "low_load",
+      "evaluation_start_timestep": 19,
+      "evaluation_timesteps": 5,
+      "methods": {
+        "shortest_path": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 1.9979166666666666,
+          "mean_link_utilization": 0.03376838400497791,
+          "mean_link_packet_loss": 0.0,
+          "mean_link_jitter": 0.09989583333333334,
+          "mean_link_throughput": 11.801792575,
+          "mean_successful_flow_delay": 3.1486666666666667,
+          "mean_flow_throughput": 31.015152166666667
+        },
+        "reactive": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 1.9979166666666666,
+          "mean_link_utilization": 0.03375656982086757,
+          "mean_link_packet_loss": 0.0,
+          "mean_link_jitter": 0.09989583333333334,
+          "mean_link_throughput": 11.801792575,
+          "mean_successful_flow_delay": 3.1313333333333344,
+          "mean_flow_throughput": 31.015152166666667
+        },
+        "current_qos_ga": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 1.9979166666666666,
+          "mean_link_utilization": 0.03599943255653097,
+          "mean_link_packet_loss": 0.0,
+          "mean_link_jitter": 0.09989583333333334,
+          "mean_link_throughput": 12.592699241666667,
+          "mean_successful_flow_delay": 3.350333333333334,
+          "mean_flow_throughput": 31.015152166666667
+        },
+        "predicted_qos_ga": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 1.9979166666666666,
+          "mean_link_utilization": 0.035936107412363597,
+          "mean_link_packet_loss": 0.0,
+          "mean_link_jitter": 0.09989583333333334,
+          "mean_link_throughput": 12.434577658333332,
+          "mean_successful_flow_delay": 3.384666666666667,
+          "mean_flow_throughput": 31.015152166666667
+        }
+      },
+      "causality": "All evaluated decisions use only telemetry completed before the decision timestep; realized QoS is computed after selected routes are applied."
+    },
+    {
+      "scenario": "medium_load",
+      "evaluation_start_timestep": 19,
+      "evaluation_timesteps": 5,
+      "methods": {
+        "shortest_path": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 1.9979166666666666,
+          "mean_link_utilization": 0.08267363307498768,
+          "mean_link_packet_loss": 0.0,
+          "mean_link_jitter": 0.09989583333333334,
+          "mean_link_throughput": 28.853943541666663,
+          "mean_successful_flow_delay": 3.1486666666666667,
+          "mean_flow_throughput": 75.12329726666665
+        },
+        "reactive": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 1.9979166666666666,
+          "mean_link_utilization": 0.08266621657521253,
+          "mean_link_packet_loss": 0.0,
+          "mean_link_jitter": 0.09989583333333334,
+          "mean_link_throughput": 28.85394354166667,
+          "mean_successful_flow_delay": 3.1613333333333338,
+          "mean_flow_throughput": 75.12329726666665
+        },
+        "current_qos_ga": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 1.9979170557622439,
+          "mean_link_utilization": 0.10044423141332816,
+          "mean_link_packet_loss": 0.0,
+          "mean_link_jitter": 0.09989604733590074,
+          "mean_link_throughput": 34.9830941,
+          "mean_successful_flow_delay": 3.8096666666666676,
+          "mean_flow_throughput": 75.12329726666665
+        },
+        "predicted_qos_ga": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 1.9979166666666666,
+          "mean_link_utilization": 0.08543178858430935,
+          "mean_link_packet_loss": 0.0,
+          "mean_link_jitter": 0.09989583333333334,
+          "mean_link_throughput": 29.598547791666668,
+          "mean_successful_flow_delay": 3.238333333333334,
+          "mean_flow_throughput": 75.12329726666665
+        }
+      },
+      "causality": "All evaluated decisions use only telemetry completed before the decision timestep; realized QoS is computed after selected routes are applied."
+    },
+    {
+      "scenario": "high_load",
+      "evaluation_start_timestep": 19,
+      "evaluation_timesteps": 5,
+      "methods": {
+        "shortest_path": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 1.9979166681436085,
+          "mean_link_utilization": 0.13157888202607337,
+          "mean_link_packet_loss": 0.0,
+          "mean_link_jitter": 0.09989583414565142,
+          "mean_link_throughput": 45.90609446666667,
+          "mean_successful_flow_delay": 3.1486666666666667,
+          "mean_flow_throughput": 119.23144226666665
+        },
+        "reactive": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 1.9979166681436085,
+          "mean_link_utilization": 0.13154204239704195,
+          "mean_link_packet_loss": 0.0,
+          "mean_link_jitter": 0.09989583414565142,
+          "mean_link_throughput": 45.90609446666667,
+          "mean_successful_flow_delay": 3.1613333333333338,
+          "mean_flow_throughput": 119.23144226666665
+        },
+        "current_qos_ga": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 2.0403473154972884,
+          "mean_link_utilization": 0.16272085402219982,
+          "mean_link_packet_loss": 0.005484617409879516,
+          "mean_link_jitter": 0.1232326901901754,
+          "mean_link_throughput": 53.2194958611339,
+          "mean_successful_flow_delay": 4.329199292369833,
+          "mean_flow_throughput": 105.6621904445356
+        },
+        "predicted_qos_ga": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 2.010872453189531,
+          "mean_link_utilization": 0.15397296670073052,
+          "mean_link_packet_loss": 0.002375872352148674,
+          "mean_link_jitter": 0.10702151592090887,
+          "mean_link_throughput": 52.33954806981254,
+          "mean_successful_flow_delay": 3.6912455755356057,
+          "mean_flow_throughput": 113.89168907925016
+        }
+      },
+      "causality": "All evaluated decisions use only telemetry completed before the decision timestep; realized QoS is computed after selected routes are applied."
+    },
+    {
+      "scenario": "increasing_load",
+      "evaluation_start_timestep": 19,
+      "evaluation_timesteps": 5,
+      "methods": {
+        "shortest_path": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 2.0180613490000625,
+          "mean_link_utilization": 0.1806380894058482,
+          "mean_link_packet_loss": 0.004636072918522406,
+          "mean_link_jitter": 0.11097540861670104,
+          "mean_link_throughput": 60.609159065604594,
+          "mean_successful_flow_delay": 3.2702308628150005,
+          "mean_flow_throughput": 153.02850122908504
+        },
+        "reactive": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 2.0161845206667293,
+          "mean_link_utilization": 0.18053816943858678,
+          "mean_link_packet_loss": 0.003961855290308776,
+          "mean_link_jitter": 0.10994315303336771,
+          "mean_link_throughput": 60.927980162629865,
+          "mean_successful_flow_delay": 3.2678829028150007,
+          "mean_flow_throughput": 154.3037856171861
+        },
+        "current_qos_ga": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 2.0781903176351593,
+          "mean_link_utilization": 0.21422290594853258,
+          "mean_link_packet_loss": 0.015012674826011459,
+          "mean_link_jitter": 0.14404634136600433,
+          "mean_link_throughput": 66.66681770553767,
+          "mean_successful_flow_delay": 4.284625264744787,
+          "mean_flow_throughput": 134.3432337617363
+        },
+        "predicted_qos_ga": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 2.0602440352442684,
+          "mean_link_utilization": 0.2146229512658249,
+          "mean_link_packet_loss": 0.01447855375602386,
+          "mean_link_jitter": 0.13417588605101413,
+          "mean_link_throughput": 67.18640984927694,
+          "mean_successful_flow_delay": 4.205789994427274,
+          "mean_flow_throughput": 135.78642329787354
+        }
+      },
+      "causality": "All evaluated decisions use only telemetry completed before the decision timestep; realized QoS is computed after selected routes are applied."
+    },
+    {
+      "scenario": "congestion",
+      "evaluation_start_timestep": 19,
+      "evaluation_timesteps": 5,
+      "methods": {
+        "shortest_path": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 2.0180613490000625,
+          "mean_link_utilization": 0.1806380894058482,
+          "mean_link_packet_loss": 0.004636072918522406,
+          "mean_link_jitter": 0.11097540861670104,
+          "mean_link_throughput": 60.609159065604594,
+          "mean_successful_flow_delay": 3.2702308628150005,
+          "mean_flow_throughput": 153.02850122908504
+        },
+        "reactive": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 2.0161845206667293,
+          "mean_link_utilization": 0.18053816943858678,
+          "mean_link_packet_loss": 0.003961855290308776,
+          "mean_link_jitter": 0.10994315303336771,
+          "mean_link_throughput": 60.927980162629865,
+          "mean_successful_flow_delay": 3.2678829028150007,
+          "mean_flow_throughput": 154.3037856171861
+        },
+        "current_qos_ga": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 2.0781903176351593,
+          "mean_link_utilization": 0.21422290594853258,
+          "mean_link_packet_loss": 0.015012674826011459,
+          "mean_link_jitter": 0.14404634136600433,
+          "mean_link_throughput": 66.66681770553767,
+          "mean_successful_flow_delay": 4.284625264744787,
+          "mean_flow_throughput": 134.3432337617363
+        },
+        "predicted_qos_ga": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 2.0602440352442684,
+          "mean_link_utilization": 0.2146229512658249,
+          "mean_link_packet_loss": 0.01447855375602386,
+          "mean_link_jitter": 0.13417588605101413,
+          "mean_link_throughput": 67.18640984927694,
+          "mean_successful_flow_delay": 4.205789994427274,
+          "mean_flow_throughput": 135.78642329787354
+        }
+      },
+      "causality": "All evaluated decisions use only telemetry completed before the decision timestep; realized QoS is computed after selected routes are applied."
+    },
+    {
+      "scenario": "traffic_spike",
+      "evaluation_start_timestep": 19,
+      "evaluation_timesteps": 5,
+      "methods": {
+        "shortest_path": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 1.9981875703103147,
+          "mean_link_utilization": 0.08267363307498768,
+          "mean_link_packet_loss": 0.0,
+          "mean_link_jitter": 0.10004483033733977,
+          "mean_link_throughput": 28.853943541666663,
+          "mean_successful_flow_delay": 3.1495500051544227,
+          "mean_flow_throughput": 75.12329726666665
+        },
+        "reactive": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 1.9982332298919705,
+          "mean_link_utilization": 0.08266621657521253,
+          "mean_link_packet_loss": 0.0,
+          "mean_link_jitter": 0.10006994310725048,
+          "mean_link_throughput": 28.85394354166667,
+          "mean_successful_flow_delay": 3.1618387645470443,
+          "mean_flow_throughput": 75.12329726666665
+        },
+        "current_qos_ga": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 1.9985385078405484,
+          "mean_link_utilization": 0.08791373335229975,
+          "mean_link_packet_loss": 0.0,
+          "mean_link_jitter": 0.10023784597896833,
+          "mean_link_throughput": 30.720632825,
+          "mean_successful_flow_delay": 3.3510566894978937,
+          "mean_flow_throughput": 75.12329726666665
+        },
+        "predicted_qos_ga": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 1.998363185298557,
+          "mean_link_utilization": 0.08289638401969586,
+          "mean_link_packet_loss": 0.0,
+          "mean_link_jitter": 0.10014141858087296,
+          "mean_link_throughput": 28.85394354166667,
+          "mean_successful_flow_delay": 3.1472974112350007,
+          "mean_flow_throughput": 75.12329726666665
+        }
+      },
+      "causality": "All evaluated decisions use only telemetry completed before the decision timestep; realized QoS is computed after selected routes are applied."
+    },
+    {
+      "scenario": "link_degradation",
+      "evaluation_start_timestep": 19,
+      "evaluation_timesteps": 5,
+      "methods": {
+        "shortest_path": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 1.9979166666666666,
+          "mean_link_utilization": 0.09335146951055578,
+          "mean_link_packet_loss": 0.0,
+          "mean_link_jitter": 0.09989583333333334,
+          "mean_link_throughput": 28.853943541666663,
+          "mean_successful_flow_delay": 3.1486666666666667,
+          "mean_flow_throughput": 75.12329726666665
+        },
+        "reactive": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 1.9979166666666666,
+          "mean_link_utilization": 0.08899129624049427,
+          "mean_link_packet_loss": 0.0,
+          "mean_link_jitter": 0.09989583333333334,
+          "mean_link_throughput": 28.85394354166667,
+          "mean_successful_flow_delay": 3.1613333333333338,
+          "mean_flow_throughput": 75.12329726666665
+        },
+        "current_qos_ga": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 1.9993903912123046,
+          "mean_link_utilization": 0.1067185512002388,
+          "mean_link_packet_loss": 0.0,
+          "mean_link_jitter": 0.10070638183343403,
+          "mean_link_throughput": 34.17561514166667,
+          "mean_successful_flow_delay": 3.6789923051730553,
+          "mean_flow_throughput": 75.12329726666665
+        },
+        "predicted_qos_ga": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 1.9979166666666666,
+          "mean_link_utilization": 0.09235686231051989,
+          "mean_link_packet_loss": 0.0,
+          "mean_link_jitter": 0.09989583333333334,
+          "mean_link_throughput": 30.108952658333333,
+          "mean_successful_flow_delay": 3.2803333333333335,
+          "mean_flow_throughput": 75.12329726666665
+        }
+      },
+      "causality": "All evaluated decisions use only telemetry completed before the decision timestep; realized QoS is computed after selected routes are applied."
+    },
+    {
+      "scenario": "recovery",
+      "evaluation_start_timestep": 19,
+      "evaluation_timesteps": 5,
+      "methods": {
+        "shortest_path": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 1.997916677979053,
+          "mean_link_utilization": 0.08267363307498768,
+          "mean_link_packet_loss": 0.0,
+          "mean_link_jitter": 0.09989583955514586,
+          "mean_link_throughput": 28.853943541666663,
+          "mean_successful_flow_delay": 3.148666678103942,
+          "mean_flow_throughput": 75.12329726666665
+        },
+        "reactive": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 1.9979166826347452,
+          "mean_link_utilization": 0.08266621657521253,
+          "mean_link_packet_loss": 0.0,
+          "mean_link_jitter": 0.0998958421157765,
+          "mean_link_throughput": 28.85394354166667,
+          "mean_successful_flow_delay": 3.161333345292342,
+          "mean_flow_throughput": 75.12329726666665
+        },
+        "current_qos_ga": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 1.9979204421451162,
+          "mean_link_utilization": 0.09577068507062601,
+          "mean_link_packet_loss": 0.0,
+          "mean_link_jitter": 0.09989790984648064,
+          "mean_link_throughput": 33.24871838333333,
+          "mean_successful_flow_delay": 3.5990111123199857,
+          "mean_flow_throughput": 75.12329726666665
+        },
+        "predicted_qos_ga": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 1.9979221488796575,
+          "mean_link_utilization": 0.08460030022859287,
+          "mean_link_packet_loss": 0.0,
+          "mean_link_jitter": 0.09989884855047841,
+          "mean_link_throughput": 29.386800791666666,
+          "mean_successful_flow_delay": 3.219348333943521,
+          "mean_flow_throughput": 75.12329726666665
+        }
+      },
+      "causality": "All evaluated decisions use only telemetry completed before the decision timestep; realized QoS is computed after selected routes are applied."
+    },
+    {
+      "scenario": "anomalous_traffic",
+      "evaluation_start_timestep": 19,
+      "evaluation_timesteps": 5,
+      "methods": {
+        "shortest_path": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 1.9983071246888937,
+          "mean_link_utilization": 0.06186964547219487,
+          "mean_link_packet_loss": 0.0,
+          "mean_link_jitter": 0.10011058524555835,
+          "mean_link_throughput": 21.54703710833333,
+          "mean_successful_flow_delay": 3.149536046213899,
+          "mean_flow_throughput": 55.45130979999999
+        },
+        "reactive": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 1.9980365980876542,
+          "mean_link_utilization": 0.061617032593613036,
+          "mean_link_packet_loss": 0.0,
+          "mean_link_jitter": 0.09996179561487652,
+          "mean_link_throughput": 21.54703710833333,
+          "mean_successful_flow_delay": 3.15353523072298,
+          "mean_flow_throughput": 55.45130979999999
+        },
+        "current_qos_ga": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 1.9987397182375224,
+          "mean_link_utilization": 0.07223594255243222,
+          "mean_link_packet_loss": 0.0,
+          "mean_link_jitter": 0.100348511697304,
+          "mean_link_throughput": 25.047908216666666,
+          "mean_successful_flow_delay": 3.6001088424185963,
+          "mean_flow_throughput": 55.45130979999999
+        },
+        "predicted_qos_ga": {
+          "link_samples": 120,
+          "flow_samples": 30,
+          "failed_flows": 0,
+          "failure_rate": 0.0,
+          "mean_link_delay": 1.9980103626731562,
+          "mean_link_utilization": 0.06304502832342697,
+          "mean_link_packet_loss": 0.0,
+          "mean_link_jitter": 0.09994736613690278,
+          "mean_link_throughput": 21.89259535833333,
+          "mean_successful_flow_delay": 3.2364998753390797,
+          "mean_flow_throughput": 55.45130979999999
+        }
+      },
+      "causality": "All evaluated decisions use only telemetry completed before the decision timestep; realized QoS is computed after selected routes are applied."
+    }
+  ],
+  "aggregate_across_scenarios": {
+    "shortest_path": {
+      "mean_link_delay": {
+        "mean": 2.002011740578866,
+        "std": 0.008025870640712385
+      },
+      "mean_link_utilization": {
+        "mean": 0.10125390921254489,
+        "std": 0.0459043262096424
+      },
+      "mean_link_packet_loss": {
+        "mean": 0.0009272145837044812,
+        "std": 0.0018544291674089624
+      },
+      "mean_link_jitter": {
+        "mean": 0.10214812398504307,
+        "std": 0.004414228852391778
+      },
+      "mean_link_throughput": {
+        "mean": 34.47429599895425,
+        "std": 15.283476024408088
+      },
+      "failure_rate": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "link_samples": 1200,
+      "flow_samples": 300,
+      "failed_flows": 0
+    },
+    "reactive": {
+      "mean_link_delay": {
+        "mean": 2.00161388867581,
+        "std": 0.007285938988955755
+      },
+      "mean_link_utilization": {
+        "mean": 0.10076481462300405,
+        "std": 0.04598512854835775
+      },
+      "mean_link_packet_loss": {
+        "mean": 0.0007923710580617553,
+        "std": 0.0015847421161235106
+      },
+      "mean_link_jitter": {
+        "mean": 0.10192930543836239,
+        "std": 0.004007266443925626
+      },
+      "mean_link_throughput": {
+        "mean": 34.53806021835931,
+        "std": 15.392655429677104
+      },
+      "failure_rate": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "link_samples": 1200,
+      "flow_samples": 300,
+      "failed_flows": 0
+    },
+    "current_qos_ga": {
+      "mean_link_delay": {
+        "mean": 2.0185067788394253,
+        "std": 0.03232922335267232
+      },
+      "mean_link_utilization": {
+        "mean": 0.11906934734780487,
+        "std": 0.05609604621703103
+      },
+      "mean_link_packet_loss": {
+        "mean": 0.0035509967061902433,
+        "std": 0.005956056270067722
+      },
+      "mean_link_jitter": {
+        "mean": 0.1112203950283506,
+        "std": 0.01778107284396981
+      },
+      "mean_link_throughput": {
+        "mean": 39.23048932805425,
+        "std": 16.67856626916346
+      },
+      "failure_rate": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "link_samples": 1200,
+      "flow_samples": 300,
+      "failed_flows": 0
+    },
+    "predicted_qos_ga": {
+      "mean_link_delay": {
+        "mean": 2.0117322887196103,
+        "std": 0.024553509347605484
+      },
+      "mean_link_utilization": {
+        "mean": 0.11129171286955981,
+        "std": 0.05864922426781131
+      },
+      "mean_link_packet_loss": {
+        "mean": 0.0031332979864196393,
+        "std": 0.005715997239754722
+      },
+      "mean_link_jitter": {
+        "mean": 0.10749442546245247,
+        "std": 0.013504430141182936
+      },
+      "mean_link_throughput": {
+        "mean": 36.85863333600331,
+        "std": 17.80618650838929
+      },
+      "failure_rate": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "link_samples": 1200,
+      "flow_samples": 300,
+      "failed_flows": 0
+    }
+  },
+  "synthetic_security_interface_check": {
+    "label": "Synthetic per-edge risk interface check; not UNSW-NB15 data or security-performance evidence.",
+    "selected_path": [
+      0,
+      2,
+      3
+    ],
+    "expected_low_risk_path": [
+      0,
+      2,
+      3
+    ],
+    "passed": true
+  }
+}

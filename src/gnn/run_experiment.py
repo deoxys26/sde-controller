@@ -18,7 +18,8 @@ import yaml
 from src.gnn.dataset import TemporalGraphDataset
 from src.gnn.evaluate import evaluate_model
 from src.gnn.model import (CongestionOnlyDGSTMTLForecaster, DirectedCongestionDGSTMTLForecaster,
-                           DirectedOnlyDGSTMTLForecaster, DGSTMTLReferenceForecaster, EdgeQoSForecaster)
+                           DirectedOnlyDGSTMTLForecaster, DGSTMTLReferenceForecaster, EdgeQoSForecaster,
+                           TemporalAttentionEdgeForecaster)
 from src.gnn.train import train_model
 from src.topology.graph_builder import build_topology
 from src.simulator.network_simulator import NetworkSimulator
@@ -27,6 +28,8 @@ SCENARIOS = ("normal", "low_load", "medium_load", "high_load", "increasing_load"
              "traffic_spike", "link_degradation", "recovery", "anomalous_traffic")
 MAIN_MODELS = ("reference", "current", "proposed")
 ABLATION_MODELS = ("reference", "directed_only", "congestion_only", "proposed")
+# Model D comparison: B (current), C (proposed), D (model_d).
+MODEL_D_MODELS = ("current", "proposed", "model_d")
 
 
 def build_model(name, dataset, config):
@@ -35,6 +38,9 @@ def build_model(name, dataset, config):
     if name == "current":
         return EdgeQoSForecaster(features, targets, hidden_channels=hidden,
                                  gru_hidden_size=int(config.get("gru_hidden_size", hidden)))
+    if name == "model_d":
+        return TemporalAttentionEdgeForecaster(features, targets, hidden_channels=hidden,
+                                              gru_hidden_size=int(config.get("gru_hidden_size", hidden)))
     classes = {"reference": DGSTMTLReferenceForecaster,
                "directed_only": DirectedOnlyDGSTMTLForecaster,
                "congestion_only": CongestionOnlyDGSTMTLForecaster,

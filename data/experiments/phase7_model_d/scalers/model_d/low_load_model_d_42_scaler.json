@@ -1,0 +1,40 @@
+{
+  "feature_columns": [
+    "capacity",
+    "traffic",
+    "utilization",
+    "queue_length",
+    "delay",
+    "packet_loss",
+    "jitter",
+    "throughput"
+  ],
+  "target_columns": [
+    "delay",
+    "utilization",
+    "packet_loss",
+    "jitter"
+  ],
+  "mean": [
+    349.4866638183594,
+    11.439669609069824,
+    0.032471075654029846,
+    0.0,
+    1.9979166984558105,
+    0.0,
+    0.09989583492279053,
+    11.439669609069824
+  ],
+  "scale": [
+    21.09737777709961,
+    19.714038848876953,
+    0.055736299604177475,
+    1.0,
+    0.1107165738940239,
+    1.0,
+    0.00553582888096571,
+    19.714038848876953
+  ],
+  "train_end_timestep": 15,
+  "fit_scope": "Phase 4.5 chronological training period only"
+}

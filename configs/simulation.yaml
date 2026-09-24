@@ -88,3 +88,13 @@ security:
   risk_threshold: 0.5
   logistic_max_iter: 300
   random_forest_estimators: 50
+
+# Model D experiment: temporal-attention GRU variant.
+# Runs under the same gnn_experiment protocol; only model list differs.
+model_d_experiment:
+  models: ["current", "proposed", "model_d"]
+  output_dir: "data/experiments/model_d"
+  description: >
+    Controlled comparison of Model B (current), Model C (proposed),
+    and Model D (model_d / TemporalAttentionEdgeForecaster).
+    Protocol is identical to the Phase 4.5 strengthened study.

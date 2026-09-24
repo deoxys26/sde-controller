@@ -2,8 +2,9 @@
 
 from .dataset import TemporalGraphDataset
 from .model import (CongestionOnlyDGSTMTLForecaster, DirectedCongestionDGSTMTLForecaster,
-                    DirectedOnlyDGSTMTLForecaster, DGSTMTLReferenceForecaster, EdgeQoSForecaster)
+                    DirectedOnlyDGSTMTLForecaster, DGSTMTLReferenceForecaster, EdgeQoSForecaster,
+                    TemporalAttentionEdgeForecaster)
 
 __all__ = ["TemporalGraphDataset", "EdgeQoSForecaster", "DGSTMTLReferenceForecaster",
            "DirectedCongestionDGSTMTLForecaster", "DirectedOnlyDGSTMTLForecaster",
-           "CongestionOnlyDGSTMTLForecaster"]
+           "CongestionOnlyDGSTMTLForecaster", "TemporalAttentionEdgeForecaster"]

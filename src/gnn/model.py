@@ -156,3 +156,51 @@ class CongestionOnlyDGSTMTLForecaster(DirectedCongestionDGSTMTLForecaster):
     """Ablation: congestion-conditioned adjacency without directed continuity."""
     def forward(self, sequence):
         return self._forward_with_prior(sequence, directed=False, use_congestion=True)
+
+
+class TemporalAttentionEdgeForecaster(nn.Module):
+    """Model D: EdgeQoSForecaster with learned temporal attention over GRU outputs.
+
+    Motivation: Model B discards all GRU timestep outputs except the last.
+    For SDN QoS, congestion events can lag — a queue buildup that peaked
+    two timesteps ago may be the most informative signal.  A single-head
+    scalar self-attention over all H GRU outputs lets the model selectively
+    weight each historical step.  The change adds exactly ``gru_hidden_size``
+    attention-score parameters; all other components are identical to Model B.
+
+    Architecture diff from Model B (EdgeQoSForecaster):
+    - Add: self.temporal_attn = nn.Linear(gru_hidden_size, 1, bias=False)
+    - Replace: output[:, -1, :]  →  weighted_sum over all T timestep outputs
+    """
+
+    def __init__(self, edge_feature_count, target_count, hidden_channels=16, gru_hidden_size=16):
+        super().__init__()
+        self.gcn1 = DirectedGraphConv(1, hidden_channels)
+        self.gcn2 = DirectedGraphConv(hidden_channels, hidden_channels)
+        self.edge_encoder = nn.Sequential(
+            nn.Linear(hidden_channels * 2 + edge_feature_count, hidden_channels),
+            nn.ReLU(),
+        )
+        self.gru = nn.GRU(hidden_channels, gru_hidden_size, batch_first=True)
+        self.temporal_attn = nn.Linear(gru_hidden_size, 1, bias=False)
+        self.head = nn.Linear(gru_hidden_size, target_count)
+
+    def forward(self, sequence):
+        encoded = []
+        for graph in sequence:
+            node_state = torch.relu(self.gcn1(graph.x, graph.edge_index))
+            node_state = torch.relu(self.gcn2(node_state, graph.edge_index))
+            source, destination = graph.edge_index
+            edge_state = torch.cat(
+                (node_state[source], node_state[destination], graph.edge_attr), dim=1
+            )
+            encoded.append(self.edge_encoder(edge_state))
+        # [directed links, history, gru_hidden]
+        temporal_edges = torch.stack(encoded, dim=1)
+        # output shape: [links, history, gru_hidden]
+        output, _ = self.gru(temporal_edges)
+        # scalar score per timestep: [links, history, 1]
+        scores = self.temporal_attn(output)
+        weights = torch.softmax(scores, dim=1)          # [links, history, 1]
+        context = (weights * output).sum(dim=1)         # [links, gru_hidden]
+        return self.head(context)

@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import os
 import re
+import tempfile
 from pathlib import Path
 
 import numpy as np
@@ -125,3 +126,23 @@ def assert_pytest_basetemp_is_outside_repository(tmp_path_factory):
     basetemp = Path(os.path.normcase(os.path.abspath(os.fspath(tmp_path_factory.getbasetemp()))))
     if _is_contained(basetemp, REPOSITORY_ROOT):
         raise AssertionError(f"pytest basetemp must be outside repository root: {basetemp}")
+
+
+@pytest.fixture
+def tmp_path(request, tmp_path_factory):
+    """Create an external synthetic directory without pytest's ``current`` symlink.
+
+    In this Windows sandbox pytest's built-in fixture fails while creating its
+    numbered-directory symlink under the virtualized Temp mount.  A unique
+    direct child of pytest's already-validated external basetemp is sufficient
+    for these tests and does not depend on symlink/junction privileges.
+    Directories are intentionally left in that per-command basetemp; no
+    pre-existing scratch content is cleaned or replaced.
+    """
+    base = Path(os.path.normcase(os.path.abspath(os.fspath(tmp_path_factory.getbasetemp()))))
+    if _is_contained(base, REPOSITORY_ROOT):
+        raise AssertionError(f"pytest basetemp must be outside repository root: {base}")
+    # Keep the path short enough for Windows MAX_PATH even when basetemp is
+    # supplied by a deeply nested virtualized external scratch root.
+    del request
+    return Path(tempfile.mkdtemp(prefix="t-", dir=base))

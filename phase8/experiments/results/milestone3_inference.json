@@ -1,0 +1,462 @@
+[
+  {
+    "experiment": "A_low_traffic_10Mbps",
+    "iperf_target_mbps": 10.0,
+    "snapshots_collected": 7,
+    "history_used": 5,
+    "measured_utilization_stats": {
+      "n": 40,
+      "mean": 0.025711645429569892,
+      "std": 0.044531943895378394,
+      "min": 0.0,
+      "max": 0.10292621667812642
+    },
+    "predictions": {
+      "s1->s2": {
+        "timestamp": 1790366074.6680624,
+        "src": "s1",
+        "dst": "s2",
+        "pred_delay": 1.7994799613952637,
+        "pred_utilization": 0.008375566452741623,
+        "pred_packet_loss": 0.02317812293767929,
+        "pred_jitter": 0.08900672942399979,
+        "input_features": {
+          "capacity": 100.0,
+          "traffic": 10.282894134521484,
+          "utilization": 0.10282894223928452,
+          "queue_length": 0.0,
+          "delay": 0.0,
+          "packet_loss": 0.0,
+          "jitter": 0.0,
+          "throughput": 10.282894134521484
+        },
+        "unavailable_features": [
+          "delay",
+          "jitter",
+          "packet_loss",
+          "queue_length"
+        ],
+        "WARNING": "Model B was trained on synthetic ~1000 Mbps topology data. Phase 8 uses 100 Mbps Mininet links. Missing features (queue_length, delay, packet_loss, jitter) are set to 0.0. Predictions reflect interface compatibility, not validated accuracy."
+      },
+      "s2->s1": {
+        "timestamp": 1790366074.6680624,
+        "src": "s2",
+        "dst": "s1",
+        "pred_delay": 1.799124836921692,
+        "pred_utilization": 0.008265148848295212,
+        "pred_packet_loss": 0.03470882028341293,
+        "pred_jitter": 0.088939368724823,
+        "input_features": {
+          "capacity": 100.0,
+          "traffic": 0.0,
+          "utilization": 0.0,
+          "queue_length": 0.0,
+          "delay": 0.0,
+          "packet_loss": 0.0,
+          "jitter": 0.0,
+          "throughput": 0.0
+        },
+        "unavailable_features": [
+          "delay",
+          "jitter",
+          "packet_loss",
+          "queue_length"
+        ],
+        "WARNING": "Model B was trained on synthetic ~1000 Mbps topology data. Phase 8 uses 100 Mbps Mininet links. Missing features (queue_length, delay, packet_loss, jitter) are set to 0.0. Predictions reflect interface compatibility, not validated accuracy."
+      },
+      "s1->s3": {
+        "timestamp": 1790366074.6680624,
+        "src": "s1",
+        "dst": "s3",
+        "pred_delay": 1.799124836921692,
+        "pred_utilization": 0.008265148848295212,
+        "pred_packet_loss": 0.03470876067876816,
+        "pred_jitter": 0.088939368724823,
+        "input_features": {
+          "capacity": 100.0,
+          "traffic": 0.0,
+          "utilization": 0.0,
+          "queue_length": 0.0,
+          "delay": 0.0,
+          "packet_loss": 0.0,
+          "jitter": 0.0,
+          "throughput": 0.0
+        },
+        "unavailable_features": [
+          "delay",
+          "jitter",
+          "packet_loss",
+          "queue_length"
+        ],
+        "WARNING": "Model B was trained on synthetic ~1000 Mbps topology data. Phase 8 uses 100 Mbps Mininet links. Missing features (queue_length, delay, packet_loss, jitter) are set to 0.0. Predictions reflect interface compatibility, not validated accuracy."
+      },
+      "s3->s1": {
+        "timestamp": 1790366074.6680624,
+        "src": "s3",
+        "dst": "s1",
+        "pred_delay": 1.799124836921692,
+        "pred_utilization": 0.008265148848295212,
+        "pred_packet_loss": 0.03470876067876816,
+        "pred_jitter": 0.088939368724823,
+        "input_features": {
+          "capacity": 100.0,
+          "traffic": 0.0,
+          "utilization": 0.0,
+          "queue_length": 0.0,
+          "delay": 0.0,
+          "packet_loss": 0.0,
+          "jitter": 0.0,
+          "throughput": 0.0
+        },
+        "unavailable_features": [
+          "delay",
+          "jitter",
+          "packet_loss",
+          "queue_length"
+        ],
+        "WARNING": "Model B was trained on synthetic ~1000 Mbps topology data. Phase 8 uses 100 Mbps Mininet links. Missing features (queue_length, delay, packet_loss, jitter) are set to 0.0. Predictions reflect interface compatibility, not validated accuracy."
+      },
+      "s2->s4": {
+        "timestamp": 1790366074.6680624,
+        "src": "s2",
+        "dst": "s4",
+        "pred_delay": 1.7994799613952637,
+        "pred_utilization": 0.008375560864806175,
+        "pred_packet_loss": 0.023179464042186737,
+        "pred_jitter": 0.08900671452283859,
+        "input_features": {
+          "capacity": 100.0,
+          "traffic": 10.282950401306152,
+          "utilization": 0.10282950103282928,
+          "queue_length": 0.0,
+          "delay": 0.0,
+          "packet_loss": 0.0,
+          "jitter": 0.0,
+          "throughput": 10.282950401306152
+        },
+        "unavailable_features": [
+          "delay",
+          "jitter",
+          "packet_loss",
+          "queue_length"
+        ],
+        "WARNING": "Model B was trained on synthetic ~1000 Mbps topology data. Phase 8 uses 100 Mbps Mininet links. Missing features (queue_length, delay, packet_loss, jitter) are set to 0.0. Predictions reflect interface compatibility, not validated accuracy."
+      },
+      "s4->s2": {
+        "timestamp": 1790366074.6680624,
+        "src": "s4",
+        "dst": "s2",
+        "pred_delay": 1.799124836921692,
+        "pred_utilization": 0.008265148848295212,
+        "pred_packet_loss": 0.03470882028341293,
+        "pred_jitter": 0.088939368724823,
+        "input_features": {
+          "capacity": 100.0,
+          "traffic": 0.0,
+          "utilization": 0.0,
+          "queue_length": 0.0,
+          "delay": 0.0,
+          "packet_loss": 0.0,
+          "jitter": 0.0,
+          "throughput": 0.0
+        },
+        "unavailable_features": [
+          "delay",
+          "jitter",
+          "packet_loss",
+          "queue_length"
+        ],
+        "WARNING": "Model B was trained on synthetic ~1000 Mbps topology data. Phase 8 uses 100 Mbps Mininet links. Missing features (queue_length, delay, packet_loss, jitter) are set to 0.0. Predictions reflect interface compatibility, not validated accuracy."
+      },
+      "s3->s4": {
+        "timestamp": 1790366074.6680624,
+        "src": "s3",
+        "dst": "s4",
+        "pred_delay": 1.799124836921692,
+        "pred_utilization": 0.008265148848295212,
+        "pred_packet_loss": 0.03470876067876816,
+        "pred_jitter": 0.088939368724823,
+        "input_features": {
+          "capacity": 100.0,
+          "traffic": 0.0,
+          "utilization": 0.0,
+          "queue_length": 0.0,
+          "delay": 0.0,
+          "packet_loss": 0.0,
+          "jitter": 0.0,
+          "throughput": 0.0
+        },
+        "unavailable_features": [
+          "delay",
+          "jitter",
+          "packet_loss",
+          "queue_length"
+        ],
+        "WARNING": "Model B was trained on synthetic ~1000 Mbps topology data. Phase 8 uses 100 Mbps Mininet links. Missing features (queue_length, delay, packet_loss, jitter) are set to 0.0. Predictions reflect interface compatibility, not validated accuracy."
+      },
+      "s4->s3": {
+        "timestamp": 1790366074.6680624,
+        "src": "s4",
+        "dst": "s3",
+        "pred_delay": 1.799124836921692,
+        "pred_utilization": 0.008265148848295212,
+        "pred_packet_loss": 0.03470882028341293,
+        "pred_jitter": 0.088939368724823,
+        "input_features": {
+          "capacity": 100.0,
+          "traffic": 0.0,
+          "utilization": 0.0,
+          "queue_length": 0.0,
+          "delay": 0.0,
+          "packet_loss": 0.0,
+          "jitter": 0.0,
+          "throughput": 0.0
+        },
+        "unavailable_features": [
+          "delay",
+          "jitter",
+          "packet_loss",
+          "queue_length"
+        ],
+        "WARNING": "Model B was trained on synthetic ~1000 Mbps topology data. Phase 8 uses 100 Mbps Mininet links. Missing features (queue_length, delay, packet_loss, jitter) are set to 0.0. Predictions reflect interface compatibility, not validated accuracy."
+      }
+    },
+    "note_unavailable_features": [
+      "queue_length: not measurable via OFPPortStatsRequest",
+      "delay: cannot be derived from controller event timestamps",
+      "packet_loss: rx_dropped/tx_dropped are port-level, not end-to-end",
+      "jitter: not measurable via OFPPortStatsRequest"
+    ],
+    "domain_shift_note": "Model B trained on synthetic ~1000 Mbps topology (normal scenario). Phase 8 uses 100 Mbps Mininet links. Unavailable features set to 0.0. Scaler was not re-fitted on Phase 8 data."
+  },
+  {
+    "experiment": "B_high_traffic_50Mbps",
+    "iperf_target_mbps": 50.0,
+    "snapshots_collected": 7,
+    "history_used": 5,
+    "measured_utilization_stats": {
+      "n": 40,
+      "mean": 0.09537572190178592,
+      "std": 0.184116709115384,
+      "min": 0.0,
+      "max": 0.5145982599707513
+    },
+    "predictions": {
+      "s1->s2": {
+        "timestamp": 1790366088.601778,
+        "src": "s1",
+        "dst": "s2",
+        "pred_delay": 1.7989236116409302,
+        "pred_utilization": 0.011132718995213509,
+        "pred_packet_loss": 0.0,
+        "pred_jitter": 0.0892467349767685,
+        "input_features": {
+          "capacity": 100.0,
+          "traffic": 18.235849380493164,
+          "utilization": 0.1823584884405136,
+          "queue_length": 0.0,
+          "delay": 0.0,
+          "packet_loss": 0.0,
+          "jitter": 0.0,
+          "throughput": 18.235849380493164
+        },
+        "unavailable_features": [
+          "delay",
+          "jitter",
+          "packet_loss",
+          "queue_length"
+        ],
+        "WARNING": "Model B was trained on synthetic ~1000 Mbps topology data. Phase 8 uses 100 Mbps Mininet links. Missing features (queue_length, delay, packet_loss, jitter) are set to 0.0. Predictions reflect interface compatibility, not validated accuracy."
+      },
+      "s2->s1": {
+        "timestamp": 1790366088.601778,
+        "src": "s2",
+        "dst": "s1",
+        "pred_delay": 1.799124836921692,
+        "pred_utilization": 0.008265148848295212,
+        "pred_packet_loss": 0.03470882028341293,
+        "pred_jitter": 0.088939368724823,
+        "input_features": {
+          "capacity": 100.0,
+          "traffic": 0.00017985343583859503,
+          "utilization": 1.7985344129556324e-06,
+          "queue_length": 0.0,
+          "delay": 0.0,
+          "packet_loss": 0.0,
+          "jitter": 0.0,
+          "throughput": 0.00017985343583859503
+        },
+        "unavailable_features": [
+          "delay",
+          "jitter",
+          "packet_loss",
+          "queue_length"
+        ],
+        "WARNING": "Model B was trained on synthetic ~1000 Mbps topology data. Phase 8 uses 100 Mbps Mininet links. Missing features (queue_length, delay, packet_loss, jitter) are set to 0.0. Predictions reflect interface compatibility, not validated accuracy."
+      },
+      "s1->s3": {
+        "timestamp": 1790366088.601778,
+        "src": "s1",
+        "dst": "s3",
+        "pred_delay": 1.799124836921692,
+        "pred_utilization": 0.008265148848295212,
+        "pred_packet_loss": 0.03470880538225174,
+        "pred_jitter": 0.088939368724823,
+        "input_features": {
+          "capacity": 100.0,
+          "traffic": 0.0,
+          "utilization": 0.0,
+          "queue_length": 0.0,
+          "delay": 0.0,
+          "packet_loss": 0.0,
+          "jitter": 0.0,
+          "throughput": 0.0
+        },
+        "unavailable_features": [
+          "delay",
+          "jitter",
+          "packet_loss",
+          "queue_length"
+        ],
+        "WARNING": "Model B was trained on synthetic ~1000 Mbps topology data. Phase 8 uses 100 Mbps Mininet links. Missing features (queue_length, delay, packet_loss, jitter) are set to 0.0. Predictions reflect interface compatibility, not validated accuracy."
+      },
+      "s3->s1": {
+        "timestamp": 1790366088.601778,
+        "src": "s3",
+        "dst": "s1",
+        "pred_delay": 1.799124836921692,
+        "pred_utilization": 0.008265148848295212,
+        "pred_packet_loss": 0.03470880538225174,
+        "pred_jitter": 0.088939368724823,
+        "input_features": {
+          "capacity": 100.0,
+          "traffic": 0.0,
+          "utilization": 0.0,
+          "queue_length": 0.0,
+          "delay": 0.0,
+          "packet_loss": 0.0,
+          "jitter": 0.0,
+          "throughput": 0.0
+        },
+        "unavailable_features": [
+          "delay",
+          "jitter",
+          "packet_loss",
+          "queue_length"
+        ],
+        "WARNING": "Model B was trained on synthetic ~1000 Mbps topology data. Phase 8 uses 100 Mbps Mininet links. Missing features (queue_length, delay, packet_loss, jitter) are set to 0.0. Predictions reflect interface compatibility, not validated accuracy."
+      },
+      "s2->s4": {
+        "timestamp": 1790366088.601778,
+        "src": "s2",
+        "dst": "s4",
+        "pred_delay": 1.7989230155944824,
+        "pred_utilization": 0.011133559048175812,
+        "pred_packet_loss": 0.0,
+        "pred_jitter": 0.08924675732851028,
+        "input_features": {
+          "capacity": 100.0,
+          "traffic": 18.23541259765625,
+          "utilization": 0.1823541224002838,
+          "queue_length": 0.0,
+          "delay": 0.0,
+          "packet_loss": 0.0,
+          "jitter": 0.0,
+          "throughput": 18.23541259765625
+        },
+        "unavailable_features": [
+          "delay",
+          "jitter",
+          "packet_loss",
+          "queue_length"
+        ],
+        "WARNING": "Model B was trained on synthetic ~1000 Mbps topology data. Phase 8 uses 100 Mbps Mininet links. Missing features (queue_length, delay, packet_loss, jitter) are set to 0.0. Predictions reflect interface compatibility, not validated accuracy."
+      },
+      "s4->s2": {
+        "timestamp": 1790366088.601778,
+        "src": "s4",
+        "dst": "s2",
+        "pred_delay": 1.799124836921692,
+        "pred_utilization": 0.008265148848295212,
+        "pred_packet_loss": 0.034708939492702484,
+        "pred_jitter": 0.088939368724823,
+        "input_features": {
+          "capacity": 100.0,
+          "traffic": 0.0,
+          "utilization": 0.0,
+          "queue_length": 0.0,
+          "delay": 0.0,
+          "packet_loss": 0.0,
+          "jitter": 0.0,
+          "throughput": 0.0
+        },
+        "unavailable_features": [
+          "delay",
+          "jitter",
+          "packet_loss",
+          "queue_length"
+        ],
+        "WARNING": "Model B was trained on synthetic ~1000 Mbps topology data. Phase 8 uses 100 Mbps Mininet links. Missing features (queue_length, delay, packet_loss, jitter) are set to 0.0. Predictions reflect interface compatibility, not validated accuracy."
+      },
+      "s3->s4": {
+        "timestamp": 1790366088.601778,
+        "src": "s3",
+        "dst": "s4",
+        "pred_delay": 1.799124836921692,
+        "pred_utilization": 0.008265148848295212,
+        "pred_packet_loss": 0.03470882028341293,
+        "pred_jitter": 0.088939368724823,
+        "input_features": {
+          "capacity": 100.0,
+          "traffic": 0.0,
+          "utilization": 0.0,
+          "queue_length": 0.0,
+          "delay": 0.0,
+          "packet_loss": 0.0,
+          "jitter": 0.0,
+          "throughput": 0.0
+        },
+        "unavailable_features": [
+          "delay",
+          "jitter",
+          "packet_loss",
+          "queue_length"
+        ],
+        "WARNING": "Model B was trained on synthetic ~1000 Mbps topology data. Phase 8 uses 100 Mbps Mininet links. Missing features (queue_length, delay, packet_loss, jitter) are set to 0.0. Predictions reflect interface compatibility, not validated accuracy."
+      },
+      "s4->s3": {
+        "timestamp": 1790366088.601778,
+        "src": "s4",
+        "dst": "s3",
+        "pred_delay": 1.799124836921692,
+        "pred_utilization": 0.008265148848295212,
+        "pred_packet_loss": 0.034708939492702484,
+        "pred_jitter": 0.088939368724823,
+        "input_features": {
+          "capacity": 100.0,
+          "traffic": 0.0,
+          "utilization": 0.0,
+          "queue_length": 0.0,
+          "delay": 0.0,
+          "packet_loss": 0.0,
+          "jitter": 0.0,
+          "throughput": 0.0
+        },
+        "unavailable_features": [
+          "delay",
+          "jitter",
+          "packet_loss",
+          "queue_length"
+        ],
+        "WARNING": "Model B was trained on synthetic ~1000 Mbps topology data. Phase 8 uses 100 Mbps Mininet links. Missing features (queue_length, delay, packet_loss, jitter) are set to 0.0. Predictions reflect interface compatibility, not validated accuracy."
+      }
+    },
+    "note_unavailable_features": [
+      "queue_length: not measurable via OFPPortStatsRequest",
+      "delay: cannot be derived from controller event timestamps",
+      "packet_loss: rx_dropped/tx_dropped are port-level, not end-to-end",
+      "jitter: not measurable via OFPPortStatsRequest"
+    ],
+    "domain_shift_note": "Model B trained on synthetic ~1000 Mbps topology (normal scenario). Phase 8 uses 100 Mbps Mininet links. Unavailable features set to 0.0. Scaler was not re-fitted on Phase 8 data."
+  }
+]

@@ -1,0 +1,6 @@
+# Recorded local reference pins (Python 3.12; CPU training policy).
+# This file is declarative. The notebook does not install packages automatically.
+numpy==1.26.4
+torch==2.12.0
+psutil==7.2.2
+pytest==9.1.1

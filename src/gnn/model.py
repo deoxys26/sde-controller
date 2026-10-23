@@ -79,10 +79,28 @@ class DGSTMTLReferenceForecaster(nn.Module):
 
     def _hybrid_adjacency(self, representation, static, task):
         q, k = self.query[task](representation), self.key[task](representation)
-        dynamic = torch.softmax(q @ k.T / (representation.size(1) ** .5), dim=1)
-        gate = torch.sigmoid(self.gate[task](representation) @ representation.T / (representation.size(1) ** .5))
+        dynamic = torch.softmax(q @ k.transpose(-1, -2) / (representation.size(-1) ** .5), dim=-1)
+        gate = torch.sigmoid(self.gate[task](representation) @ representation.transpose(-1, -2) / (representation.size(-1) ** .5))
         hybrid = gate * (static + dynamic)
-        return hybrid / hybrid.sum(dim=1, keepdim=True).clamp(min=1e-6)
+        return hybrid / hybrid.sum(dim=-1, keepdim=True).clamp(min=1e-6)
+
+    def forward_batched(self, sequence):
+        """Batched independent samples; each sample keeps its own link attention."""
+        static = _link_adjacency(sequence[-1].edge_index, directed=False)
+        task_outputs = []
+        for task in range(self.target_count):
+            encoded = [torch.relu(self.task_inputs[task](snapshot.edge_attr)) for snapshot in sequence]
+            groups = [torch.stack(encoded[start:start + 3]).mean(0) for start in range(0, len(encoded), 3)]
+            group_outputs = []
+            for state in groups:
+                adjacency = self._hybrid_adjacency(state, static, task)
+                states = [state]
+                for layer in self.layers[task]:
+                    states.append(torch.relu(adjacency @ states[-1] @ layer.weight.T + layer.bias))
+                weights = torch.softmax(self.task_weights[task], dim=0)
+                group_outputs.append(sum(weight * value for weight, value in zip(weights, states)))
+            task_outputs.append(torch.stack(group_outputs).amax(0))
+        return self.head(torch.cat(task_outputs, dim=-1))
 
     def forward(self, sequence):
         # The reference paper groups triples; pooling all complete/partial groups
@@ -110,19 +128,62 @@ class DirectedCongestionDGSTMTLForecaster(DGSTMTLReferenceForecaster):
     Dynamic correlation is scaled by recent utilization/queue congestion similarity,
     rather than allowing every link pair to exchange state indiscriminately.
     """
+    def __init__(self, edge_feature_count, target_count, hidden_channels=16, feature_names=None):
+        super().__init__(edge_feature_count, target_count, hidden_channels=hidden_channels)
+        self.feature_names = tuple(feature_names or ())
+
     def _hybrid_adjacency(self, representation, static, task):
         q, k = self.query[task](representation), self.key[task](representation)
-        dynamic = torch.softmax(q @ k.T / (representation.size(1) ** .5), dim=1)
-        gate = torch.sigmoid(self.gate[task](representation) @ representation.T / (representation.size(1) ** .5))
+        dynamic = torch.softmax(q @ k.transpose(-1, -2) / (representation.size(-1) ** .5), dim=-1)
+        gate = torch.sigmoid(self.gate[task](representation) @ representation.transpose(-1, -2) / (representation.size(-1) ** .5))
         hybrid = gate * (static + dynamic * static)
-        return hybrid / hybrid.sum(dim=1, keepdim=True).clamp(min=1e-6)
+        return hybrid / hybrid.sum(dim=-1, keepdim=True).clamp(min=1e-6)
+
+    def forward_batched(self, sequence, directed=True, use_congestion=True):
+        """Vectorized batch path that prevents attention between separate samples."""
+        static = _link_adjacency(sequence[-1].edge_index, directed=directed)
+        if use_congestion:
+            if not self.feature_names:
+                raise ValueError("Batched congestion conditioning requires feature_names")
+            names = [name for name in ("utilization", "queue_length") if name in self.feature_names]
+            if not names:
+                raise ValueError("Congestion conditioning requires a utilization feature")
+            columns = [self.feature_names.index(name) for name in names]
+            congestion = sequence[-1].edge_attr[:, :, columns]
+            similarity = torch.exp(-torch.cdist(congestion, congestion, p=1))
+            static = static.unsqueeze(0) * (1 + similarity)
+            static = static / static.sum(dim=-1, keepdim=True).clamp(min=1e-6)
+        task_outputs = []
+        for task in range(self.target_count):
+            encoded = [torch.relu(self.task_inputs[task](snapshot.edge_attr)) for snapshot in sequence]
+            groups = [torch.stack(encoded[start:start + 3]).mean(0) for start in range(0, len(encoded), 3)]
+            group_outputs = []
+            for state in groups:
+                adjacency = self._hybrid_adjacency(state, static, task)
+                states = [state]
+                for layer in self.layers[task]:
+                    states.append(torch.relu(adjacency @ states[-1] @ layer.weight.T + layer.bias))
+                weights = torch.softmax(self.task_weights[task], dim=0)
+                group_outputs.append(sum(weight * value for weight, value in zip(weights, states)))
+            task_outputs.append(torch.stack(group_outputs).amax(0))
+        return self.head(torch.cat(task_outputs, dim=-1))
 
     def _forward_with_prior(self, sequence, directed, use_congestion):
         """Shared ablation implementation; output dimensions stay unchanged."""
         static = _link_adjacency(sequence[-1].edge_index, directed=directed)
         if use_congestion:
-            # Feature positions 2/3 are documented utilization and queue length.
-            congestion = sequence[-1].edge_attr[:, 2:4]
+            # Resolve by name: reduced-feature experiments expose utilization
+            # alone, while legacy telemetry can include queue length too.
+            if self.feature_names:
+                names = [name for name in ("utilization", "queue_length") if name in self.feature_names]
+                if not names:
+                    raise ValueError("Congestion conditioning requires a utilization feature")
+                columns = [self.feature_names.index(name) for name in names]
+                congestion = sequence[-1].edge_attr[:, columns]
+            else:
+                # Backward-compatible legacy default for the original telemetry
+                # feature layout; new callers must provide feature_names.
+                congestion = sequence[-1].edge_attr[:, 2:4]
             similarity = torch.exp(-torch.cdist(congestion, congestion, p=1))
             static = static * (1 + similarity)
             static = static / static.sum(dim=1, keepdim=True).clamp(min=1e-6)
